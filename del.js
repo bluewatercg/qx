@@ -3,6 +3,7 @@ const $ = new Env('🍅')
 let kxkz = $.getdata('kxkz')
 let kxkz2 = $.getdata('kxkz2')
 let kxkz3 = $.getdata('kxkz3')
+$.setdata('kxkz','')
 console.log(kxkz)
 // process.env.kxkz=''
 // process.env.kxkz2=''
