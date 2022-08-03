@@ -7,6 +7,7 @@ const $ = new Env('🍅')
 // process.env.kxkz2=''
 // process.env.kxkz3=''
 // process.env.kxkznum = 30
+console.log(process.env.kxkz)
 delete process.env.kxkz
 delete process.env.kxkz2
 delete process.env.kxkz3
