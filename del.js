@@ -1,8 +1,9 @@
 const $ = new Env('🍅')
 
-// let kxkz = $.getdata('kxkz')
-// let kxkz2 = $.getdata('kxkz2')
-// let kxkz3 = $.getdata('kxkz3')
+let kxkz = $.getdata('kxkz')
+let kxkz2 = $.getdata('kxkz2')
+let kxkz3 = $.getdata('kxkz3')
+console.log(kxkz)
 // process.env.kxkz=''
 // process.env.kxkz2=''
 // process.env.kxkz3=''
