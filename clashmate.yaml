@@ -2269,6 +2269,8 @@ rules:
   - DOMAIN-SUFFIX,o365weve.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,oaspapps.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,office.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,azureedge.net,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,powerapps.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,office.net,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,office365.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,officeppe.net,Ⓜ️ 微软服务
@@ -2827,7 +2829,6 @@ rules:
   - DOMAIN-SUFFIX,armorgames.com,🚀 节点选择
   - DOMAIN-SUFFIX,aspnetcdn.com,🚀 节点选择
   - DOMAIN-SUFFIX,awsstatic.com,🚀 节点选择
-  - DOMAIN-SUFFIX,azureedge.net,🚀 节点选择
   - DOMAIN-SUFFIX,azurewebsites.net,🚀 节点选择
   - DOMAIN-SUFFIX,bandwagonhost.com,🚀 节点选择
   - DOMAIN-SUFFIX,bing.com,🚀 节点选择
