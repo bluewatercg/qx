@@ -1,9 +1,9 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-10-12 10:02:29
+# 创建时间：2023-10-12 10:11:32
 # 使用模版：V2RaySE 默认模版
-# 节点数量：41
+# 节点数量：38
 ####################################
 # !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
@@ -86,45 +86,42 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"vpn001.cfvpn.asia_1","type":"vless","server":"ym.cfvpn.asia","port":80,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vpn001.cfvpn.asia_2","type":"vless","server":"vpn001.cfvpn.asia","port":8880,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2083","type":"vless","server":"vless.cfvpn.asia","port":2083,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1","type":"vless","server":"ym.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vpn001.cfvpn.asia_3","type":"vless","server":"vpn001.cfvpn.asia","port":2086,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vless.cfvpn.asia-HTTP-2052","type":"vless","server":"vless.cfvpn.asia","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vpn001.cfvpn.asia_1","type":"vless","server":"vpn001.cfvpn.asia","port":2086,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
+  - {"name":"vpn001.cfvpn.asia_2","type":"vless","server":"ym.cfvpn.asia","port":80,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
   - {"name":"vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
   - {"name":"vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-8080_1","type":"vless","server":"vless.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-8080_2","type":"vless","server":"vless.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vpn001.cfvpn.asia_4","type":"vless","server":"vpn001.cfvpn.asia","port":2095,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2096","type":"vless","server":"vless.cfvpn.asia","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel","type":"vless","server":"www.visa.com.tw","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-80","type":"vless","server":"vless.cfvpn.asia","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2086","type":"vless","server":"vless.cfvpn.asia","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2","type":"vless","server":"ym.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel","type":"vless","server":"cdn.didi8.com","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vpn001.cfvpn.asia_5","type":"vless","server":"vpn001.cfvpn.asia","port":8080,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vpn001.cfvpn.asia_6","type":"vless","server":"vpn001.cfvpn.asia","port":2052,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
-  - {"name":"vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":443,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
   - {"name":"vless.cfvpn.asia-HTTPS-2087","type":"vless","server":"vless.cfvpn.asia","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
   - {"name":"vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel","type":"vless","server":"www.visa.com.tw","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
-  - {"name":"vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
   - {"name":"vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel","type":"vless","server":"www.visa.com","port":2053,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vpn001.cfvpn.asia_3","type":"vless","server":"vpn001.cfvpn.asia","port":8880,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2086","type":"vless","server":"vless.cfvpn.asia","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel","type":"vless","server":"www.visa.com.tw","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2087,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vpn001.cfvpn.asia_4","type":"vless","server":"vpn001.cfvpn.asia","port":2052,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vpn001.cfvpn.asia_5","type":"vless","server":"vpn001.cfvpn.asia","port":8080,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
+  - {"name":"vpn001.cfvpn.asia_6","type":"vless","server":"vpn001.cfvpn.asia","port":2095,"uuid":"57a57c6b-6ff3-4733-ab87-84f50073f8dd","tls":false,"servername":"vpn001.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vpn001.cfvpn.asia"}},"client-fingerprint":"randomized"}
+  - {"name":"vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel","type":"vless","server":"www.visa.co.jp","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel","type":"vless","server":"www.visa.com.sg","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2083","type":"vless","server":"vless.cfvpn.asia","port":2083,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel","type":"vless","server":"cdn.didi8.com","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":443,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-8080","type":"vless","server":"vless.cfvpn.asia","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel","type":"vless","server":"ym.cfvpn.asia","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTP-2052","type":"vless","server":"vless.cfvpn.asia","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel","type":"vless","server":"www.visa.com.tw","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
+  - {"name":"vless.cfvpn.asia-HTTPS-2096","type":"vless","server":"vless.cfvpn.asia","port":2096,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":true,"servername":"vless.cfvpn.asia","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vless.cfvpn.asia"}},"client-fingerprint":"random"}
   - {"name":"C10 | 日本 | 1000M带宽 | 外贸专线","type":"vmess","server":"cg1c10.waimaocmeoon.com","port":443,"cipher":"auto","uuid":"b48482f9-c4fc-4a77-aa35-6d477c06b347","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"cg1c10.waimaocmeoon.com","network":"ws","ws-opts":{"path":"/api/v1/graphql","headers":{"host":"cg1c10.waimaocmeoon.com"}}}
   - {"name":"C15 | 韩国 | 1000M带宽 | 外贸专线","type":"vmess","server":"cg1c15.waimaocmeoon.com","port":443,"cipher":"auto","uuid":"b48482f9-c4fc-4a77-aa35-6d477c06b347","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"cg1c15.waimaocmeoon.com","network":"ws","ws-opts":{"path":"/api/v1/graphql","headers":{"host":"cg1c15.waimaocmeoon.com"}}}
 proxy-groups:
@@ -135,43 +132,40 @@ proxy-groups:
       - DIRECT
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: ♻️ 自动选择
@@ -182,43 +176,40 @@ proxy-groups:
     proxies:
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: 🌍 国外媒体
@@ -229,43 +220,40 @@ proxy-groups:
       - 🎯 全球直连
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: 📲 电报信息
@@ -275,43 +263,40 @@ proxy-groups:
       - 🎯 全球直连
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: Ⓜ️ 微软服务
@@ -321,43 +306,40 @@ proxy-groups:
       - 🚀 节点选择
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: 🍎 苹果服务
@@ -367,43 +349,40 @@ proxy-groups:
       - 🎯 全球直连
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
   - name: 🎯 全球直连
@@ -430,43 +409,40 @@ proxy-groups:
       - ♻️ 自动选择
       - vpn001.cfvpn.asia_1
       - vpn001.cfvpn.asia_2
-      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2083
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_1
-      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
-      - vpn001.cfvpn.asia_3
-      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTP-2095-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080_1
-      - vless.cfvpn.asia-HTTP-8080_2
-      - vpn001.cfvpn.asia_4
-      - vless.cfvpn.asia-HTTPS-2096
-      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087
+      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel
       - vless.cfvpn.asia-HTTP-2052-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTP-80
+      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2082-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2095-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vpn001.cfvpn.asia_3
+      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8880-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086
-      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
-      - vless.cfvpn.asia-HTTP-8080-ym.cfvpn.asia-EDtunnel_2
-      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.com.tw-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
+      - vpn001.cfvpn.asia_4
+      - vless.cfvpn.asia-HTTPS-2096-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080-www.visa.co.jp-EDtunnel
       - vpn001.cfvpn.asia_5
       - vpn001.cfvpn.asia_6
+      - vless.cfvpn.asia-HTTP-2052-www.visa.com.sg-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.co.jp-EDtunnel
+      - vless.cfvpn.asia-HTTP-2086-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2086-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-80-www.visa.com.sg-EDtunnel
       - vless.cfvpn.asia-HTTP-2082-ym.cfvpn.asia-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087
-      - vless.cfvpn.asia-HTTP-80-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2083
+      - vless.cfvpn.asia-HTTP-80-cdn.didi8.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-443-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-8080
+      - vless.cfvpn.asia-HTTPS-2096-ym.cfvpn.asia-EDtunnel
+      - vless.cfvpn.asia-HTTP-2052
       - vless.cfvpn.asia-HTTPS-2096-www.visa.com.tw-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2087-www.visa.co.jp-EDtunnel
-      - vless.cfvpn.asia-HTTPS-2053-www.visa.com-EDtunnel
+      - vless.cfvpn.asia-HTTPS-2096
       - C10 | 日本 | 1000M带宽 | 外贸专线
       - C15 | 韩国 | 1000M带宽 | 外贸专线
 
