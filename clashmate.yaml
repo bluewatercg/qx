@@ -1,9 +1,9 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-11-10 14:17:17
+# 创建时间：2023-11-27 15:24:20
 # 使用模版：V2RaySE 默认模版
-# 节点数量：9
+# 节点数量：30
 ####################################
 # !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
@@ -86,102 +86,249 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"cdn.didi8.com","type":"vless","server":"cdn.didi8.com","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"icook.hk","type":"vless","server":"icook.hk","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"ip.sb","type":"vless","server":"ip.sb","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"japan.com","type":"vless","server":"japan.com","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.co.jp","type":"vless","server":"www.visa.co.jp","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.hk","type":"vless","server":"www.visa.com.hk","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg","type":"vless","server":"www.visa.com.sg","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw","type":"vless","server":"www.visa.com.tw","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visakorea.com","type":"vless","server":"www.visakorea.com","port":80,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"worker-steep-shape-ace6.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-steep-shape-ace6.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:2052","type":"vless","server":"pdzmre77473.sanfen001.top","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:2082","type":"vless","server":"pdzmre77473.sanfen001.top","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:2086","type":"vless","server":"pdzmre77473.sanfen001.top","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:2095","type":"vless","server":"pdzmre77473.sanfen001.top","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:8080","type":"vless","server":"pdzmre77473.sanfen001.top","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"tcp","client-fingerprint":"randomized"}
+  - {"name":"pdzmre77473.sanfen001.top:8880","type":"vless","server":"pdzmre77473.sanfen001.top","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"pdzmre77473.sanfen001.top","network":"tcp","client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:8880","type":"vless","server":"www.visa.co.jp","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:8080","type":"vless","server":"www.visa.co.jp","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:2052","type":"vless","server":"www.visa.co.jp","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:2086","type":"vless","server":"www.visa.co.jp","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:2095","type":"vless","server":"www.visa.co.jp","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"wwww.visa.co.jp:2082","type":"vless","server":"www.visa.co.jp","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:8880","type":"vless","server":"www.visa.com.hk","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:8080","type":"vless","server":"www.visa.com.hk","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:2052","type":"vless","server":"www.visa.com.hk","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:2086","type":"vless","server":"www.visa.com.hk","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:2095","type":"vless","server":"www.visa.com.hk","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.hk:2082","type":"vless","server":"www.visa.com.hk","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:8880","type":"vless","server":"www.visa.com.sg","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:8080","type":"vless","server":"www.visa.com.sg","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:2052","type":"vless","server":"www.visa.com.sg","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:2086","type":"vless","server":"www.visa.com.sg","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:2095","type":"vless","server":"www.visa.com.sg","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.sg:2082","type":"vless","server":"www.visa.com.sg","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:8880","type":"vless","server":"www.visa.com.tw","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:8080","type":"vless","server":"www.visa.com.tw","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:2052","type":"vless","server":"www.visa.com.tw","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:2086","type":"vless","server":"www.visa.com.tw","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:2095","type":"vless","server":"www.visa.com.tw","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"www.visa.com.tw:2082","type":"vless","server":"www.visa.com.tw","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -204,15 +351,36 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - cdn.didi8.com
-      - icook.hk
-      - ip.sb
-      - japan.com
-      - www.visa.co.jp
-      - www.visa.com.hk
-      - www.visa.com.sg
-      - www.visa.com.tw
-      - www.visakorea.com
+      - pdzmre77473.sanfen001.top:2052
+      - pdzmre77473.sanfen001.top:2082
+      - pdzmre77473.sanfen001.top:2086
+      - pdzmre77473.sanfen001.top:2095
+      - pdzmre77473.sanfen001.top:8080
+      - pdzmre77473.sanfen001.top:8880
+      - wwww.visa.co.jp:8880
+      - wwww.visa.co.jp:8080
+      - wwww.visa.co.jp:2052
+      - wwww.visa.co.jp:2086
+      - wwww.visa.co.jp:2095
+      - wwww.visa.co.jp:2082
+      - www.visa.com.hk:8880
+      - www.visa.com.hk:8080
+      - www.visa.com.hk:2052
+      - www.visa.com.hk:2086
+      - www.visa.com.hk:2095
+      - www.visa.com.hk:2082
+      - www.visa.com.sg:8880
+      - www.visa.com.sg:8080
+      - www.visa.com.sg:2052
+      - www.visa.com.sg:2086
+      - www.visa.com.sg:2095
+      - www.visa.com.sg:2082
+      - www.visa.com.tw:8880
+      - www.visa.com.tw:8080
+      - www.visa.com.tw:2052
+      - www.visa.com.tw:2086
+      - www.visa.com.tw:2095
+      - www.visa.com.tw:2082
 rules:
 # 本地/局域网地址
 # 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
