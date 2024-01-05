@@ -86,12 +86,12 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"pdzmre77473.sanfen001.top:2052","type":"vless","server":"pdzmre77473.sanfen001.top","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"pdzmre77473.sanfen001.top:2082","type":"vless","server":"pdzmre77473.sanfen001.top","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"pdzmre77473.sanfen001.top:2086","type":"vless","server":"pdzmre77473.sanfen001.top","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"pdzmre77473.sanfen001.top:2095","type":"vless","server":"pdzmre77473.sanfen001.top","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
-  - {"name":"pdzmre77473.sanfen001.top:8080","type":"vless","server":"pdzmre77473.sanfen001.top","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"tcp","client-fingerprint":"randomized"}
-  - {"name":"pdzmre77473.sanfen001.top:8880","type":"vless","server":"pdzmre77473.sanfen001.top","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"pdzmre77473.sanfen001.top","network":"tcp","client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:2052","type":"vless","server":"achk.cloudflarest.link","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:2082","type":"vless","server":"achk.cloudflarest.link","port":2082,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:2086","type":"vless","server":"achk.cloudflarest.link","port":2086,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:2095","type":"vless","server":"achk.cloudflarest.link","port":2095,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:8080","type":"vless","server":"achk.cloudflarest.link","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"tcp","client-fingerprint":"randomized"}
+  - {"name":"achk.cloudflarest.link:8880","type":"vless","server":"achk.cloudflarest.link","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"tcp","client-fingerprint":"randomized"}
   - {"name":"wwww.visa.co.jp:8880","type":"vless","server":"www.visa.co.jp","port":8880,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
   - {"name":"wwww.visa.co.jp:8080","type":"vless","server":"www.visa.co.jp","port":8080,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
   - {"name":"wwww.visa.co.jp:2052","type":"vless","server":"www.visa.co.jp","port":2052,"uuid":"a504771c-c8b7-4cd1-b058-ba36a93d67da","tls":false,"servername":"xxk.nwnoweqill.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"xxk.nwnoweqill.workers.dev"}},"client-fingerprint":"randomized"}
@@ -122,12 +122,12 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -158,12 +158,12 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -194,12 +194,12 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -229,12 +229,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -264,12 +264,12 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -299,12 +299,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
@@ -351,12 +351,12 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - pdzmre77473.sanfen001.top:2052
-      - pdzmre77473.sanfen001.top:2082
-      - pdzmre77473.sanfen001.top:2086
-      - pdzmre77473.sanfen001.top:2095
-      - pdzmre77473.sanfen001.top:8080
-      - pdzmre77473.sanfen001.top:8880
+      - achk.cloudflarest.link:2052
+      - achk.cloudflarest.link:2082
+      - achk.cloudflarest.link:2086
+      - achk.cloudflarest.link:2095
+      - achk.cloudflarest.link:8080
+      - achk.cloudflarest.link:8880
       - wwww.visa.co.jp:8880
       - wwww.visa.co.jp:8080
       - wwww.visa.co.jp:2052
