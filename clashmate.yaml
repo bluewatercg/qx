@@ -98,12 +98,12 @@ proxies:
   - {"name":"ali.055500.xyz:2083","type":"vless","server":"ali.055500.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"ali.055500.xyz:2087","type":"vless","server":"ali.055500.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"ali.055500.xyz:2096","type":"vless","server":"ali.055500.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:443","type":"vless","server":"443.xiangmq1969.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:8443","type":"vless","server":"443.xiangmq1969.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:2053","type":"vless","server":"443.xiangmq1969.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:2083","type":"vless","server":"443.xiangmq1969.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:2087","type":"vless","server":"443.xiangmq1969.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"443.xiangmq1969.xyz:2096","type":"vless","server":"443.xiangmq1969.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:443","type":"vless","server":"hk.100366.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:8443","type":"vless","server":"hk.100366.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:2053","type":"vless","server":"hk.100366.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:2083","type":"vless","server":"hk.100366.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:2087","type":"vless","server":"hk.100366.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"hk.100366.xyz:2096","type":"vless","server":"hk.100366.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:443","type":"vless","server":"yx.134.cloudns.org","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:8443","type":"vless","server":"yx.134.cloudns.org","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:2053","type":"vless","server":"yx.134.cloudns.org","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
@@ -128,12 +128,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -158,12 +158,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -188,12 +188,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -217,12 +217,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -246,12 +246,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -275,12 +275,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -321,12 +321,12 @@ proxy-groups:
       - ali.055500.xyz:2083
       - ali.055500.xyz:2087
       - ali.055500.xyz:2096
-      - 443.xiangmq1969.xyz:443
-      - 443.xiangmq1969.xyz:8443
-      - 443.xiangmq1969.xyz:2053
-      - 443.xiangmq1969.xyz:2083
-      - 443.xiangmq1969.xyz:2087
-      - 443.xiangmq1969.xyz:2096
+      - hk.100366.xyz:443
+      - hk.100366.xyz:8443
+      - hk.100366.xyz:2053
+      - hk.100366.xyz:2083
+      - hk.100366.xyz:2087
+      - hk.100366.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
