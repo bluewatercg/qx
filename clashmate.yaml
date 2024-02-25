@@ -86,24 +86,24 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"www.visa.com.hk:443","type":"vless","server":"www.visa.com.hk","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.hk:8443","type":"vless","server":"www.visa.com.hk","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.hk:2053","type":"vless","server":"www.visa.com.hk","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"3k.134.cloudns.org","type":"vless","server":"www.visa.com.hk","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.hk:2087","type":"vless","server":"www.visa.com.hk","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.hk:2096","type":"vless","server":"www.visa.com.hk","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:443","type":"vless","server":"www.visa.com.sg","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:8443","type":"vless","server":"www.visa.com.sg","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:2053","type":"vless","server":"www.visa.com.sg","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:2083","type":"vless","server":"www.visa.com.sg","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:2087","type":"vless","server":"www.visa.com.sg","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.sg:2096","type":"vless","server":"www.visa.com.sg","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:443","type":"vless","server":"www.visa.com.tw","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:8443","type":"vless","server":"www.visa.com.tw","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:2053","type":"vless","server":"www.visa.com.tw","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:2083","type":"vless","server":"www.visa.com.tw","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:2087","type":"vless","server":"www.visa.com.tw","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"www.visa.com.tw:2096","type":"vless","server":"www.visa.com.tw","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cdnhk.huabuxiang.vip:443","type":"vless","server":"cdnhk.huabuxiang.vip","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cdnhk.huabuxiang.vip:8443","type":"vless","server":"cdnhk.huabuxiang.vip","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cdnhk.huabuxiang.vip:2053","type":"vless","server":"cdnhk.huabuxiang.vip","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"3k.134.cloudns.org","type":"vless","server":"cdnhk.huabuxiang.vip","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cdnhk.huabuxiang.vip:2087","type":"vless","server":"cdnhk.huabuxiang.vip","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cdnhk.huabuxiang.vip:2096","type":"vless","server":"cdnhk.huabuxiang.vip","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:443","type":"vless","server":"ali.055500.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:8443","type":"vless","server":"ali.055500.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:2053","type":"vless","server":"ali.055500.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:2083","type":"vless","server":"ali.055500.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:2087","type":"vless","server":"ali.055500.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"ali.055500.xyz:2096","type":"vless","server":"ali.055500.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:443","type":"vless","server":"443.xiangmq1969.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:8443","type":"vless","server":"443.xiangmq1969.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:2053","type":"vless","server":"443.xiangmq1969.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:2083","type":"vless","server":"443.xiangmq1969.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:2087","type":"vless","server":"443.xiangmq1969.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"443.xiangmq1969.xyz:2096","type":"vless","server":"443.xiangmq1969.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:443","type":"vless","server":"yx.134.cloudns.org","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:8443","type":"vless","server":"yx.134.cloudns.org","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"yx.134.cloudns.org:2053","type":"vless","server":"yx.134.cloudns.org","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
@@ -116,24 +116,24 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -146,24 +146,24 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -176,24 +176,24 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -205,24 +205,24 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -234,24 +234,24 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -263,24 +263,24 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
@@ -309,24 +309,24 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - www.visa.com.hk:443
-      - www.visa.com.hk:8443
-      - www.visa.com.hk:2053
+      - cdnhk.huabuxiang.vip:443
+      - cdnhk.huabuxiang.vip:8443
+      - cdnhk.huabuxiang.vip:2053
       - 3k.134.cloudns.org
-      - www.visa.com.hk:2087
-      - www.visa.com.hk:2096
-      - www.visa.com.sg:443
-      - www.visa.com.sg:8443
-      - www.visa.com.sg:2053
-      - www.visa.com.sg:2083
-      - www.visa.com.sg:2087
-      - www.visa.com.sg:2096
-      - www.visa.com.tw:443
-      - www.visa.com.tw:8443
-      - www.visa.com.tw:2053
-      - www.visa.com.tw:2083
-      - www.visa.com.tw:2087
-      - www.visa.com.tw:2096
+      - cdnhk.huabuxiang.vip:2087
+      - cdnhk.huabuxiang.vip:2096
+      - ali.055500.xyz:443
+      - ali.055500.xyz:8443
+      - ali.055500.xyz:2053
+      - ali.055500.xyz:2083
+      - ali.055500.xyz:2087
+      - ali.055500.xyz:2096
+      - 443.xiangmq1969.xyz:443
+      - 443.xiangmq1969.xyz:8443
+      - 443.xiangmq1969.xyz:2053
+      - 443.xiangmq1969.xyz:2083
+      - 443.xiangmq1969.xyz:2087
+      - 443.xiangmq1969.xyz:2096
       - yx.134.cloudns.org:443
       - yx.134.cloudns.org:8443
       - yx.134.cloudns.org:2053
