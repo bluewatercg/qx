@@ -86,12 +86,12 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"cdnhk.huabuxiang.vip:443","type":"vless","server":"cdnhk.huabuxiang.vip","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"cdnhk.huabuxiang.vip:8443","type":"vless","server":"cdnhk.huabuxiang.vip","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"cdnhk.huabuxiang.vip:2053","type":"vless","server":"cdnhk.huabuxiang.vip","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"3k.134.cloudns.org","type":"vless","server":"cdnhk.huabuxiang.vip","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"cdnhk.huabuxiang.vip:2087","type":"vless","server":"cdnhk.huabuxiang.vip","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
-  - {"name":"cdnhk.huabuxiang.vip:2096","type":"vless","server":"cdnhk.huabuxiang.vip","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cip.951535.xyz:443","type":"vless","server":"cip.951535.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cip.951535.xyz:8443","type":"vless","server":"cip.951535.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cip.951535.xyz:2053","type":"vless","server":"cip.951535.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"3k.134.cloudns.org","type":"vless","server":"cip.951535.xyz","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cip.951535.xyz:2087","type":"vless","server":"cip.951535.xyz","port":2087,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
+  - {"name":"cip.951535.xyz:2096","type":"vless","server":"cip.951535.xyz","port":2096,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"ali.055500.xyz:443","type":"vless","server":"ali.055500.xyz","port":443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"ali.055500.xyz:8443","type":"vless","server":"ali.055500.xyz","port":8443,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
   - {"name":"ali.055500.xyz:2053","type":"vless","server":"ali.055500.xyz","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"3k.134.cloudns.org","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"3k.134.cloudns.org"}},"client-fingerprint":"randomized"}
@@ -116,12 +116,12 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -146,12 +146,12 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -176,12 +176,12 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -205,12 +205,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -234,12 +234,12 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -263,12 +263,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
@@ -309,12 +309,12 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - cdnhk.huabuxiang.vip:443
-      - cdnhk.huabuxiang.vip:8443
-      - cdnhk.huabuxiang.vip:2053
+      - cip.951535.xyz:443
+      - cip.951535.xyz:8443
+      - cip.951535.xyz:2053
       - 3k.134.cloudns.org
-      - cdnhk.huabuxiang.vip:2087
-      - cdnhk.huabuxiang.vip:2096
+      - cip.951535.xyz:2087
+      - cip.951535.xyz:2096
       - ali.055500.xyz:443
       - ali.055500.xyz:8443
       - ali.055500.xyz:2053
