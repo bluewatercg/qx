@@ -1,0 +1,66 @@
+const input = `
+[Region] 🇺🇸US
+[IP] 45.59.187.65
+[Port] 443
+[Latency] 150 ms
+[Speed] 10519 kB/s | 84 Mbps
+[DC] SJC
+[City] San Jose
+[ASN] 906
+[AS Name] DMIT
+[Remark] US,San Jose,906,DMIT
+[Date] 2024-08-25 17:30:50 CST
+`;
+
+// 将输入解析成对象
+const parseInput = (input) => {
+    const lines = input.trim().split('\n');
+    const data = {};
+    lines.forEach(line => {
+        const [key, value] = line.split('] ').map(str => str.trim().replace('[', ''));
+        data[key] = value;
+    });
+    return data;
+};
+
+const data = parseInput(input);
+
+// 模版
+const template = {
+    "tag": `@[Region]`,
+    "type": "vless",
+    "server": `@[IP]`,
+    "server_port": `@[Port]`,
+    "uuid": "63f541dc-d51f-4c54-aec4-19b7c0bf96ce",
+    "tls": {
+        "enabled": true,
+        "server_name": "v2ray.0mail0.us.kg",
+        "insecure": false,
+        "utls": {
+            "enabled": true,
+            "fingerprint": "randomized"
+        }
+    },
+    "transport": {
+        "type": "ws",
+        "headers": {
+            "Host": "v2ray.0mail0.us.kg"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048
+    }
+};
+
+// 替换模版中的占位符
+const generateOutput = (template, data) => {
+    const output = JSON.stringify(template).replace(/@\[(\w+)\]/g, (match, p1) => {
+        return data[p1];
+    });
+    return JSON.parse(output);
+};
+
+const output = generateOutput(template, data);
+
+// 输出结果
+console.log(JSON.stringify(output, null, 2));
