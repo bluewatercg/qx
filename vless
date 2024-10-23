@@ -16,3 +16,5 @@ vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@yx.134.cloudns.org:8443?encryption=
 vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@yx.134.cloudns.org:443?encryption=none&security=tls&sni=v2ray.0mail0.us.kg&type=ws&host=v2ray.0mail0.us.kg&path=%2F%3Fed%3D2048#%E4%BC%98%E9%80%89TLS-443
 vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@yx.134.cloudns.org:2053?encryption=none&security=tls&sni=v2ray.0mail0.us.kg&type=ws&host=v2ray.0mail0.us.kg&path=%2F%3Fed%3D2048#%E4%BC%98%E9%80%89TLS-2053
 vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@yx.134.cloudns.org:2087?encryption=none&security=tls&sni=v2ray.0mail0.us.kg&type=ws&host=v2ray.0mail0.us.kg&path=%2F%3Fed%3D2048#%E4%BC%98%E9%80%89TLS-2087
+vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@132.226.22.106:34237?encryption=none&security=tls&sni=v2ray.0mail0.us.kg&type=ws&host=v2ray.0mail0.us.kg&path=%2f%3fed%3d2048#%e9%9f%a9%e5%9b%bd%e9%a6%96%e5%b0%94
+vless://63f541dc-d51f-4c54-aec4-19b7c0bf96ce@38.59.230.15:49694?encryption=none&security=tls&sni=v2ray.0mail0.us.kg&type=ws&host=v2ray.0mail0.us.kg&path=%2f%3fed%3d2048#FRA
