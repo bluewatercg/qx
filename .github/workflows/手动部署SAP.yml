@@ -1,0 +1,124 @@
+name: 手动部署 SAP
+
+on:
+  workflow_dispatch:  # 只允许手动触发
+    inputs:
+      environment:
+        description: '选择部署环境'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - staging
+          - production
+      region:
+        description: '选择部署区域'
+        required: true
+        default: 'SG'
+        type: choice
+        options:
+          - SG  # 新加坡
+          - US  # 美国
+      app_name:
+        description: '应用名称（可选，留空则自动生成）'
+        required: false
+        default: ''
+      name:
+        description: '环境变量 NAME'
+        required: true
+        default: 'SAP'
+      uuid:
+        description: '环境变量 UUID'
+        required: true
+      argo_domain:
+        description: '环境变量 ARGO_DOMAIN'
+        required: true
+      argo_auth:
+        description: '环境变量 ARGO_AUTH'
+        required: true
+      sub_path:
+        description: '环境变量 SUB_PATH'
+        required: true
+
+env:
+  DOCKER_IMAGE: ghcr.io/eooce/nodejs:main
+  MEMORY: 512M
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install CF CLI
+      run: |
+        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+        echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+        sudo apt-get update
+        sudo apt-get install -y cf8-cli
+
+    - name: Determine CF API endpoint and app name
+      run: |
+        # 设置API端点
+        if [ "${{ github.event.inputs.region }}" = "SG" ]; then
+          echo "CF_API=https://api.cf.ap21.hana.ondemand.com" >> $GITHUB_ENV
+          RANDOM_STR=$(head /dev/urandom | tr -dc 'a-z' | head -c 6)
+          DEFAULT_APP_NAME="sg$RANDOM_STR"
+        elif [ "${{ github.event.inputs.region }}" = "US" ]; then
+          echo "CF_API=https://api.cf.us10-001.hana.ondemand.com" >> $GITHUB_ENV
+          RANDOM_STR=$(head /dev/urandom | tr -dc 'a-z' | head -c 6)
+          DEFAULT_APP_NAME="us$RANDOM_STR"
+        fi
+        
+        # 设置应用名称（如果用户提供了则使用，否则使用默认）
+        if [ -n "${{ github.event.inputs.app_name }}" ]; then
+          echo "APP_NAME=${{ github.event.inputs.app_name }}" >> $GITHUB_ENV
+        else
+          echo "APP_NAME=$DEFAULT_APP_NAME" >> $GITHUB_ENV
+        fi
+        
+        echo "使用API端点: $CF_API"
+        echo "应用名称: $APP_NAME"
+
+    - name: Login to Cloud Foundry
+      run: |
+        if [ "${{ github.event.inputs.region }}" = "SG" ]; then
+          cf login -a ${{ env.CF_API }} -u "${{ secrets.EMAIL }}" -p "${{ secrets.PASSWORD }}" -o "${{ secrets.SG_ORG }}" -s "${{ secrets.SPACE }}"
+        elif [ "${{ github.event.inputs.region }}" = "US" ]; then
+          cf login -a ${{ env.CF_API }} -u "${{ secrets.EMAIL }}" -p "${{ secrets.PASSWORD }}" -o "${{ secrets.US_ORG }}" -s "${{ secrets.SPACE }}"
+        fi
+
+    - name: Deploy application
+      run: |
+        cf push ${{ env.APP_NAME }} --docker-image ${{ env.DOCKER_IMAGE }} -m ${{ env.MEMORY }} --health-check-type port
+
+    - name: Set environment variables
+      run: |
+        # 通过 github.event.inputs 设置基础环境变量
+        cf set-env ${{ env.APP_NAME }} NAME "${{ github.event.inputs.name }}"
+        cf set-env ${{ env.APP_NAME }} UUID "${{ github.event.inputs.uuid }}"
+        cf set-env ${{ env.APP_NAME }} ARGO_DOMAIN "${{ github.event.inputs.argo_domain }}"
+        cf set-env ${{ env.APP_NAME }} ARGO_AUTH "${{ github.event.inputs.argo_auth }}"
+        cf set-env ${{ env.APP_NAME }} SUB_PATH "${{ github.event.inputs.sub_path }}"
+        
+        # 可选：从文件读取环境变量(如果存在)
+        if [ -f .env ]; then
+          while IFS= read -r line; do
+            if [[ ! "$line" =~ ^# ]] && [[ -n "$line" ]]; then
+              IFS='=' read -r key value <<< "$line"
+              cf set-env ${{ env.APP_NAME }} "$key" "$value"
+            fi
+          done < .env
+        fi
+
+    - name: Restage application
+      run: |
+        cf restage ${{ env.APP_NAME }}
+
+    - name: Verify deployment
+      run: |
+        cf app ${{ env.APP_NAME }}
+        echo "Deployment completed successfully!"
