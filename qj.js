@@ -55,6 +55,7 @@ const aiInfraDomains = [
   "gstatic.com",
   "google.com",
   "googleapis.com",
+  "googleapis.cn",
   "googletagmanager.com",
   "fonts.googleapis.com",
   "ajax.googleapis.com",
