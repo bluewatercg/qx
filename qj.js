@@ -253,48 +253,58 @@ function main(config) {
 
   const generalProxyRules = generalProxyDomains.map(d => `DOMAIN-SUFFIX,${d},⚙️ 节点选择,no-resolve`);
 
-  config["rules"] = [
-    // 最高优先级：核心 AI 服务 + Antigravity IDE
-    ...aiForcedRules,
+config["rules"] = [
+  // 最高优先级：本地局域网 + 私有 IP 段（防止 Fake-IP 干扰）
+  "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
+  "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
+  "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
+  "IP-CIDR,169.254.0.0/16,🔗 全局直连,no-resolve",   // APIPA 自动私有 IP
+  "IP-CIDR,100.64.0.0/10,🔗 全局直连,no-resolve",     // CGNAT 运营商共享 IP（部分家庭路由器会用到）
+  
 
-    // 补充：Antigravity IDE 关键词兜底
-    "DOMAIN-KEYWORD,antigravity,💸 AI开发,no-resolve",
 
-    // AI 基础设施和依赖
-    ...aiInfraRules,
+  // 核心 AI 服务 + Antigravity IDE（保持你的原有优先级）
+  ...aiForcedRules,
 
-    // 保留一些关键词匹配
-    "DOMAIN-KEYWORD,claude,💸 AI开发,no-resolve",
-    "DOMAIN-KEYWORD,openai,💸 AI开发,no-resolve",
-    "DOMAIN-KEYWORD,anthropic,💸 AI开发,no-resolve",
+  // Antigravity 关键词兜底
+  "DOMAIN-KEYWORD,antigravity,💸 AI开发,no-resolve",
 
-    // 办公、生产力、Microsoft 365、Teams 等
-    ...generalProxyRules,
+  // AI 基础设施和依赖
+  ...aiInfraRules,
 
-    // Telegram 相关
-    "DOMAIN-KEYWORD,telegram,⚙️ 节点选择,no-resolve",
-    "IP-CIDR,91.108.4.0/22,⚙️ 节点选择,no-resolve",
-    "IP-CIDR,149.154.160.0/20,⚙️ 节点选择,no-resolve",
+  // 关键词匹配增强
+  "DOMAIN-KEYWORD,claude,💸 AI开发,no-resolve",
+  "DOMAIN-KEYWORD,openai,💸 AI开发,no-resolve",
+  "DOMAIN-KEYWORD,anthropic,💸 AI开发,no-resolve",
 
-    // 自定义直连域名
-    ...directRules,
+  // 继续你原来的后续规则...
+  // 办公、生产力、Microsoft 365、Teams 等
+  ...generalProxyRules,
 
-    // 规则集
-    "RULE-SET,reject,🥰 广告过滤",
-    "RULE-SET,direct,🔗 全局直连",
+  // Telegram 相关
+  "DOMAIN-KEYWORD,telegram,⚙️ 节点选择,no-resolve",
+  "IP-CIDR,91.108.4.0/22,⚙️ 节点选择,no-resolve",
+  "IP-CIDR,149.154.160.0/20,⚙️ 节点选择,no-resolve",
 
-    // 局域网 & 中国大陆
-    "GEOIP,LAN,🔗 全局直连,no-resolve",
-    "GEOIP,CN,🔗 全局直连,no-resolve",
+  // 自定义直连域名
+  ...directRules,
 
-    // 进程分流
-    ...processCategory.ai.map(p => `PROCESS-NAME,${p},💸 AI开发`),
-    ...processCategory.proxy.map(p => `PROCESS-NAME,${p},⚙️ 节点选择`),
-    ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
+  // 规则集
+  "RULE-SET,reject,🥰 广告过滤",
+  "RULE-SET,direct,🔗 全局直连",
 
-    // 兜底
-    "MATCH,🐟 漏网之鱼"
-  ];
+  // 局域网 & 中国大陆（保留原有的 GEOIP 兜底）
+  "GEOIP,LAN,🔗 全局直连,no-resolve",
+  "GEOIP,CN,🔗 全局直连,no-resolve",
+
+  // 进程分流
+  ...processCategory.ai.map(p => `PROCESS-NAME,${p},💸 AI开发`),
+  ...processCategory.proxy.map(p => `PROCESS-NAME,${p},⚙️ 节点选择`),
+  ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
+
+  // 兜底
+  "MATCH,🐟 漏网之鱼"
+];
 
   config["dns"] = dnsConfig;
   config["rule-providers"] = ruleProviders;
