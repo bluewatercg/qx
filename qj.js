@@ -6,6 +6,7 @@ const customDirectDomains = [
   "yg.qjjg.net",
   "syngentachina.com",
   "qjjg.net",
+  "qjjg.ink",
   "tagweb.vip",
   "276686433.xyz",
   "local",
