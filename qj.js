@@ -40,13 +40,12 @@ const aiForcedDomains = [
   "fireworks.ai",
   "lepton.ai",
   "api.nvidia.com",
-
   "antigravity-unleash.goog",
   "antigravity.google",
   "antigravity.google.com",
   "developers.google.com",
   "codelabs.developers.google.com",
-  "google.dev",
+  "google.dev"
 ];
 
 // ============================================================
@@ -69,7 +68,7 @@ const aiInfraDomains = [
   "anthropicusercontent.com",
   "oaiusercontent.com",
   "githubusercontent.com",
-  "context7.com",
+  "context7.com"
 ];
 
 // ============================================================
@@ -106,7 +105,7 @@ const generalProxyDomains = [
   "googleusercontent.com",
   "registry.npmmirror.com",
   "github.com",
-  "fauxid.com",
+  "fauxid.com"
 ];
 
 // ============================================================
@@ -131,7 +130,7 @@ const dnsConfig = {
     "aventura.net.cn",
     "+.aventura.net.cn",
 
-    // 微信全系列域名（防止分配 Fake-IP，导致国内流量走代理）
+    // 微信全系列域名（必须全部覆盖，防止 Fake-IP 分配）
     "+.weixin.qq.com",
     "+.weixin.com",
     "+.wx.qq.com",
@@ -149,24 +148,25 @@ const dnsConfig = {
     "+.wximg.com",
     "+.wx.com",
     "+.wxs.qq.com",
-    "+.wxs.com"
+    "+.wxs.com",
+    "+.wxs.com.cn",
+    "+.mmg.whatsapp.net",
+    "+.web.wechat.com"
   ],
   "default-nameserver": [
     "https://223.5.5.5/dns-query",
     "https://120.53.53.53/dns-query"
   ],
   "nameserver": [
-    "https://dns.alidns.com/dns-query",   // 阿里 DoH 主力
-    "https://doh.pub/dns-query",          // 腾讯 DoH 备用
-    "https://dns.google/dns-query"        // 国外兜底
+    "https://dns.alidns.com/dns-query",
+    "https://doh.pub/dns-query",
+    "https://dns.google/dns-query"
   ],
   "proxy-server-nameserver": [
     "https://dns.alidns.com/dns-query",
     "https://doh.pub/dns-query"
   ],
-  "nameserver-policy": {
-    // 不再依赖 geosite，直接用国内 DoH 作为默认
-  },
+  "nameserver-policy": {},
   "respect-rules": true,
   "query-timeout": 5000,
   "skip-fallback": true
@@ -214,7 +214,7 @@ function filterAiNodes(proxies) {
     /hongkong/i,
     /香港/i,
     /hk-node/i,
-    /hong-kong/i,
+    /hong-kong/i
   ];
 
   return proxies
@@ -232,7 +232,7 @@ function filterAiNodes(proxies) {
 }
 
 // ============================================================
-// 主函数（不依赖 GeoSite / GeoIP）
+// 主函数（最终版）
 // ============================================================
 function main(config) {
   const aiNodes = filterAiNodes(config.proxies || []);
@@ -282,10 +282,10 @@ function main(config) {
   const generalProxyRules = generalProxyDomains.map(d => `DOMAIN-SUFFIX,${d},⚙️ 节点选择,no-resolve`);
 
   config["rules"] = [
-    // 最优先：微信进程强制直连（放在最前面，确保 Weixin.exe 优先匹配 DIRECT）
+    // 最优先：微信进程强制直连（放在最前面）
     "PROCESS-NAME,Weixin.exe,🔗 全局直连",
 
-    // 最优先：微信相关域名兜底直连（防止进程规则漏掉域名）
+    // 最优先：微信域名兜底直连（防止进程规则漏掉域名）
     "DOMAIN-SUFFIX,weixin.qq.com,🔗 全局直连,no-resolve",
     "DOMAIN-SUFFIX,wx.qq.com,🔗 全局直连,no-resolve",
     "DOMAIN-SUFFIX,res.wx.qq.com,🔗 全局直连,no-resolve",
