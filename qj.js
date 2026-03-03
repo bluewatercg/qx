@@ -231,7 +231,7 @@ function main(config) {
     {
       "name": "♻️ 延迟选优",
       "type": "url-test",
-      "url": "https://www.msftconnecttest.com/connecttest.txt",
+      "url": "https://www.gstatic.com/generate_204",
       "interval": 1800,
       "tolerance": 350,
       "include-all": true
@@ -240,7 +240,7 @@ function main(config) {
       "name": "💸 AI开发",
       "type": "url-test",
       "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"],
-      "url": "https://www.msftconnecttest.com/connecttest.txt",
+      "url": "https://www.gstatic.com/generate_204",
       "interval": 1800,
       "tolerance": 350
     },
