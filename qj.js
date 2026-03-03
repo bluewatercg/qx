@@ -232,7 +232,7 @@ function filterAiNodes(proxies) {
 }
 
 // ============================================================
-// 主函数（最终版）
+// 主函数（最终修正版）
 // ============================================================
 function main(config) {
   const aiNodes = filterAiNodes(config.proxies || []);
@@ -276,34 +276,41 @@ function main(config) {
     }
   ];
 
-  const directRules = customDirectDomains.map(d => `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`);
-  const aiForcedRules = aiForcedDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发,no-resolve`);
-  const aiInfraRules = aiInfraDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发,no-resolve`);
-  const generalProxyRules = generalProxyDomains.map(d => `DOMAIN-SUFFIX,${d},⚙️ 节点选择,no-resolve`);
+  // 修复：移除所有 DOMAIN 类规则末尾的 no-resolve
+  const directRules = customDirectDomains.map(d => `DOMAIN-SUFFIX,${d},🔗 全局直连`);
+  const aiForcedRules = aiForcedDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发`);
+  const aiInfraRules = aiInfraDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发`);
+  const generalProxyRules = generalProxyDomains.map(d => `DOMAIN-SUFFIX,${d},⚙️ 节点选择`);
+
+  // 修复：动态生成所有进程规则（包含微信小程序 WeChatAppEx.exe）
+  const processRules = [
+    ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
+    ...processCategory.ai.map(p => `PROCESS-NAME,${p},💸 AI开发`),
+    ...processCategory.proxy.map(p => `PROCESS-NAME,${p},⚙️ 节点选择`)
+  ];
 
   config["rules"] = [
-    // 最优先：微信进程强制直连（放在最前面）
-    "PROCESS-NAME,Weixin.exe,🔗 全局直连",
+    // 注入所有进程规则（最高优先级）
+    ...processRules,
 
-    // 最优先：微信域名兜底直连（防止进程规则漏掉域名）
-    "DOMAIN-SUFFIX,weixin.qq.com,🔗 全局直连,no-resolve",
-    "DOMAIN-SUFFIX,wx.qq.com,🔗 全局直连,no-resolve",
-    "DOMAIN-SUFFIX,res.wx.qq.com,🔗 全局直连,no-resolve",
-    "DOMAIN-SUFFIX,weixin.com,🔗 全局直连,no-resolve",
-    "DOMAIN-SUFFIX,szfile.wx.qq.com,🔗 全局直连,no-resolve",
-    "DOMAIN-SUFFIX,wximg.com,🔗 全局直连,no-resolve",
+    // 微信域名兜底直连（修复：移除 no-resolve）
+    "DOMAIN-SUFFIX,weixin.qq.com,🔗 全局直连",
+    "DOMAIN-SUFFIX,wx.qq.com,🔗 全局直连",
+    "DOMAIN-SUFFIX,res.wx.qq.com,🔗 全局直连",
+    "DOMAIN-SUFFIX,weixin.com,🔗 全局直连",
+    "DOMAIN-SUFFIX,szfile.wx.qq.com,🔗 全局直连",
+    "DOMAIN-SUFFIX,wximg.com,🔗 全局直连",
 
-    // GEOIP 和私有网段
+    // GEOIP 和私有网段（保留 no-resolve，IP规则必须带此参数防泄漏）
     "GEOIP,LAN,🔗 全局直连,no-resolve",
     "GEOIP,CN,🔗 全局直连,no-resolve",
-
     "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
     "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
     "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
     "IP-CIDR,169.254.0.0/16,🔗 全局直连,no-resolve",
     "IP-CIDR,100.64.0.0/10,🔗 全局直连,no-resolve",
 
-    // 常见中国大陆运营商 IP 段（手动补充）
+    // 常见中国大陆运营商 IP 段（保留 no-resolve）
     "IP-CIDR,1.0.1.0/24,🔗 全局直连,no-resolve",
     "IP-CIDR,1.1.1.0/24,🔗 全局直连,no-resolve",
     "IP-CIDR,1.12.0.0/14,🔗 全局直连,no-resolve",
@@ -337,22 +344,22 @@ function main(config) {
     // 核心 AI 服务 + Antigravity IDE
     ...aiForcedRules,
 
-    // Antigravity 关键词兜底
-    "DOMAIN-KEYWORD,antigravity,💸 AI开发,no-resolve",
+    // Antigravity 关键词兜底（修复：移除 no-resolve）
+    "DOMAIN-KEYWORD,antigravity,💸 AI开发",
 
     // AI 基础设施和依赖
     ...aiInfraRules,
 
-    // 关键词匹配增强
-    "DOMAIN-KEYWORD,claude,💸 AI开发,no-resolve",
-    "DOMAIN-KEYWORD,openai,💸 AI开发,no-resolve",
-    "DOMAIN-KEYWORD,anthropic,💸 AI开发,no-resolve",
+    // 关键词匹配增强（修复：移除 no-resolve）
+    "DOMAIN-KEYWORD,claude,💸 AI开发",
+    "DOMAIN-KEYWORD,openai,💸 AI开发",
+    "DOMAIN-KEYWORD,anthropic,💸 AI开发",
 
     // 办公、生产力、Microsoft 365、Teams 等
     ...generalProxyRules,
 
     // Telegram 相关
-    "DOMAIN-KEYWORD,telegram,⚙️ 节点选择,no-resolve",
+    "DOMAIN-KEYWORD,telegram,⚙️ 节点选择",
     "IP-CIDR,91.108.4.0/22,⚙️ 节点选择,no-resolve",
     "IP-CIDR,149.154.160.0/20,⚙️ 节点选择,no-resolve",
 
