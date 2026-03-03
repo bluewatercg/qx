@@ -151,7 +151,12 @@ const dnsConfig = {
     "+.wxs.com",
     "+.wxs.com.cn",
     "+.mmg.whatsapp.net",
-    "+.web.wechat.com"
+    "+.web.wechat.com",
+    "*.qpic.cn",          // 微信朋友圈/聊天图片
+    "*.qlogo.cn",         // 微信头像
+    "*.gtimg.com",        // 腾讯静态资源
+    "*.wechatpay.com",    // 微信支付
+    "short.weixin.qq.com" // 微信核心长连接
   ],
   "default-nameserver": [
     "https://223.5.5.5/dns-query",
