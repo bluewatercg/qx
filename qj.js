@@ -181,7 +181,7 @@ const ruleProviders = {
 const processCategory = {
   ai: ["cherrystudio.exe", "zed.exe", "windsurf.exe", "claude.exe", "opencode.exe", "Notion.exe", "opencode-cli.exe"],
   proxy: ["telegram.exe", "chrome.exe", "msedge.exe", "firefox.exe"],
-  direct: ["wechat.exe", "WeChatAppEx.exe", "qq.exe", "wecom.exe", "everything.exe", "WXWork.exe"]
+  direct: ["wechat.exe", "WeChatAppEx.exe", "qq.exe", "wecom.exe", "everything.exe", "WXWork.exe","Weixin.exe"]
 };
 
 // ============================================================
