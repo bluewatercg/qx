@@ -231,18 +231,18 @@ function main(config) {
     {
       "name": "♻️ 延迟选优",
       "type": "url-test",
-      "url": "https://www.apple.com/library/test/success.html",
-      "interval": 1200,
-      "tolerance": 200,
+      "url": "https://www.msftconnecttest.com/connecttest.txt",
+      "interval": 1800,
+      "tolerance": 350,
       "include-all": true
     },
     {
       "name": "💸 AI开发",
       "type": "url-test",
       "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"],
-      "url": "https://www.apple.com/library/test/success.html",
-      "interval": 1200,
-      "tolerance": 200
+      "url": "https://www.msftconnecttest.com/connecttest.txt",
+      "interval": 1800,
+      "tolerance": 350
     },
     {
       "name": "🔗 全局直连",
