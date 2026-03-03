@@ -128,8 +128,28 @@ const dnsConfig = {
     "time.windows.com",
     "time.nist.gov",
     "time.apple.com",
-    "aventura.net.cn",                    // ← 手动加保险
-    "+.aventura.net.cn"                   // ← 通配所有子域名
+    "aventura.net.cn",
+    "+.aventura.net.cn",
+
+    // 微信全系列域名（防止分配 Fake-IP，导致国内流量走代理）
+    "+.weixin.qq.com",
+    "+.weixin.com",
+    "+.wx.qq.com",
+    "+.res.wx.qq.com",
+    "+.szfile.wx.qq.com",
+    "+.szshort.weixin.qq.com",
+    "+.szextshort.weixin.qq.com",
+    "+.szlong.weixin.qq.com",
+    "+.szextlong.weixin.qq.com",
+    "+.szext.weixin.qq.com",
+    "+.short.weixin.qq.com",
+    "+.long.weixin.qq.com",
+    "+.ext.weixin.qq.com",
+    "+.file.wx.qq.com",
+    "+.wximg.com",
+    "+.wx.com",
+    "+.wxs.qq.com",
+    "+.wxs.com"
   ],
   "default-nameserver": [
     "https://223.5.5.5/dns-query",
@@ -146,7 +166,6 @@ const dnsConfig = {
   ],
   "nameserver-policy": {
     // 不再依赖 geosite，直接用国内 DoH 作为默认
-    // 如果需要国内域名特殊处理，可以手动加 DOMAIN-SUFFIX
   },
   "respect-rules": true,
   "query-timeout": 5000,
@@ -181,7 +200,7 @@ const ruleProviders = {
 const processCategory = {
   ai: ["cherrystudio.exe", "zed.exe", "windsurf.exe", "claude.exe", "opencode.exe", "Notion.exe", "opencode-cli.exe"],
   proxy: ["telegram.exe", "chrome.exe", "msedge.exe", "firefox.exe"],
-  direct: ["wechat.exe", "WeChatAppEx.exe", "qq.exe", "wecom.exe", "everything.exe", "WXWork.exe","Weixin.exe"]
+  direct: ["wechat.exe", "WeChatAppEx.exe", "qq.exe", "wecom.exe", "everything.exe", "WXWork.exe", "Weixin.exe"]
 };
 
 // ============================================================
@@ -216,10 +235,6 @@ function filterAiNodes(proxies) {
 // 主函数（不依赖 GeoSite / GeoIP）
 // ============================================================
 function main(config) {
-  // 不指定 geosite / geoip，彻底不使用它们
-  // config["geosite"] = ...;   // 删除
-  // config["geoip"]   = ...;   // 删除
-
   const aiNodes = filterAiNodes(config.proxies || []);
 
   config["proxy-groups"] = [
@@ -267,14 +282,28 @@ function main(config) {
   const generalProxyRules = generalProxyDomains.map(d => `DOMAIN-SUFFIX,${d},⚙️ 节点选择,no-resolve`);
 
   config["rules"] = [
-    // 最优先：本地局域网 + 常见中国大陆 IP 段（手动覆盖，不依赖 GeoIP）
+    // 最优先：微信进程强制直连（放在最前面，确保 Weixin.exe 优先匹配 DIRECT）
+    "PROCESS-NAME,Weixin.exe,🔗 全局直连",
+
+    // 最优先：微信相关域名兜底直连（防止进程规则漏掉域名）
+    "DOMAIN-SUFFIX,weixin.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,wx.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,res.wx.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,weixin.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,szfile.wx.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,wximg.com,🔗 全局直连,no-resolve",
+
+    // GEOIP 和私有网段
+    "GEOIP,LAN,🔗 全局直连,no-resolve",
+    "GEOIP,CN,🔗 全局直连,no-resolve",
+
     "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
     "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
     "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
     "IP-CIDR,169.254.0.0/16,🔗 全局直连,no-resolve",
     "IP-CIDR,100.64.0.0/10,🔗 全局直连,no-resolve",
 
-    // 常见中国大陆运营商 IP 段（手动补充，替代 GEOIP,CN）
+    // 常见中国大陆运营商 IP 段（手动补充）
     "IP-CIDR,1.0.1.0/24,🔗 全局直连,no-resolve",
     "IP-CIDR,1.1.1.0/24,🔗 全局直连,no-resolve",
     "IP-CIDR,1.12.0.0/14,🔗 全局直连,no-resolve",
@@ -333,11 +362,6 @@ function main(config) {
     // 规则集
     "RULE-SET,reject,🥰 广告过滤",
     "RULE-SET,direct,🔗 全局直连",
-
-    // 进程分流
-    ...processCategory.ai.map(p => `PROCESS-NAME,${p},💸 AI开发`),
-    ...processCategory.proxy.map(p => `PROCESS-NAME,${p},⚙️ 节点选择`),
-    ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
 
     // 兜底
     "MATCH,🐟 漏网之鱼"
