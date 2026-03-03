@@ -231,7 +231,7 @@ function main(config) {
     {
       "name": "♻️ 延迟选优",
       "type": "url-test",
-      "url": "https://connectivitycheck.gstatic.com/generate_204",
+      "url": "https://www.apple.com/library/test/success.html",
       "interval": 1200,
       "tolerance": 200,
       "include-all": true
@@ -240,7 +240,7 @@ function main(config) {
       "name": "💸 AI开发",
       "type": "url-test",
       "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"],
-      "url": "https://connectivitycheck.gstatic.com/generate_204",
+      "url": "https://www.apple.com/library/test/success.html",
       "interval": 1200,
       "tolerance": 200
     },
