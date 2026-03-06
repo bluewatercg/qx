@@ -156,7 +156,7 @@ const dnsConfig = {
     "*.qlogo.cn",         // 微信头像
     "*.gtimg.com",        // 腾讯静态资源
     "*.wechatpay.com",    // 微信支付
-    "short.weixin.qq.com" // 微信核心长连接
+    "short.weixin.qq.com", // 微信核心长连接
     "+.aliyuncs.com",
     "+.aliyun.com",
   ],
