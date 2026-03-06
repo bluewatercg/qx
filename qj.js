@@ -157,6 +157,7 @@ const dnsConfig = {
     "*.gtimg.com",        // 腾讯静态资源
     "*.wechatpay.com",    // 微信支付
     "short.weixin.qq.com" // 微信核心长连接
+    "+.aliyuncs.com",
     "+.aliyun.com",
   ],
   "default-nameserver": [
