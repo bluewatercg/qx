@@ -1,3 +1,4 @@
+const enableUrlTest = false; // true = 启用自动延迟测试, false = 手动选节点
 // ============================================================
 // 自定义直连域名列表（这些域名强制走直连）
 // ============================================================
@@ -246,26 +247,30 @@ function main(config) {
   const aiNodes = filterAiNodes(config.proxies || []);
 
   config["proxy-groups"] = [
-    {
-      "name": "⚙️ 节点选择",
-      "type": "select",
-      "proxies": ["♻️ 延迟选优", "💸 AI开发", "DIRECT"]
-    },
-    {
-      "name": "♻️ 延迟选优",
-      "type": "url-test",
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": 1800,
-      "tolerance": 350,
-      "include-all": true
+      {
+        "name": "⚙️ 节点选择",
+        "type": "select",
+        "proxies": ["♻️ 延迟选优", "💸 AI开发", "DIRECT"]
+      },
+      {
+        "name": "♻️ 延迟选优",
+        "type": enableUrlTest ? "url-test" : "select",
+        "include-all": true,
+        ...(enableUrlTest && {
+          "url": "http://captive.apple.com/hotspot-detect.html",
+          "interval": 600,
+          "tolerance": 300
+        })
     },
     {
       "name": "💸 AI开发",
-      "type": "url-test",
+      "type": enableUrlTest ? "url-test" : "select",  // 关键：动态切换类型
       "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": 1800,
-      "tolerance": 350
+      ...(enableUrlTest && {  // 只在启用时注入测试参数
+        "url": "https://www.apple.com/library/test/success.html",
+        "interval": 600,
+        "tolerance": 300
+      })
     },
     {
       "name": "🔗 全局直连",
