@@ -33,6 +33,7 @@ const aiForcedDomains = [
   "perplexity.ai",
   "you.com",
   "grok.x.ai",
+  "grok.x.com",
   "x.ai",
   "deepseek.com",
   "deepseek.ai",
