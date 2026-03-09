@@ -71,7 +71,8 @@ const aiInfraDomains = [
   "oaiusercontent.com",
   "githubusercontent.com",
   "context7.com",
-  "bing.com"
+  "bing.com",
+  "x.com"
 ];
 
 // ============================================================
