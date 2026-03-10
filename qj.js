@@ -191,7 +191,7 @@ const ruleProviders = {
     "type": "http",
     "behavior": "domain",
     "format": "mrs",
-    "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs",
+    "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs",
     "path": "./ruleset/reject.mrs",
     "interval": 86400
   },
@@ -199,7 +199,7 @@ const ruleProviders = {
     "type": "http",
     "behavior": "domain",
     "format": "mrs",
-    "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs",
+    "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs",
     "path": "./ruleset/direct.mrs",
     "interval": 86400
   }
