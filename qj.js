@@ -12,7 +12,8 @@ const customDirectDomains = [
   "276686433.xyz",
   "local",
   "localhost",
-  "aventura.net.cn"
+  "aventura.net.cn",
+  "eastmoney.com" 
 ];
 
 // ============================================================
@@ -133,7 +134,7 @@ const dnsConfig = {
     "time.apple.com",
     "aventura.net.cn",
     "+.aventura.net.cn",
-
+    "+.eastmoney.com ",
     // 微信全系列域名（必须全部覆盖，防止 Fake-IP 分配）
     "+.weixin.qq.com",
     "+.weixin.com",
