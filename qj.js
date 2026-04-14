@@ -164,6 +164,13 @@ const dnsConfig = {
     "short.weixin.qq.com", // 微信核心长连接
     "+.aliyuncs.com",
     "+.aliyun.com",
+    "+.qjjg.net",        // 排除整个后缀
+    "*.qjjg.net",
+    "+.qjjg.ink",        // 排除整个后缀
+    "*.qjjg.ink",
+    "tagweb.vip",
+    "+.276686433.xyz",        // 排除整个后缀
+    "*.276686433.xyz"
   ],
   "default-nameserver": [
     "https://223.5.5.5/dns-query",
