@@ -4,7 +4,7 @@
 const enableUrlTest = false; 
 
 function filterAiNodes(proxies) {
-  const good = /us|usa|america|美国|jp|japan|日本|sg|singapore|新加坡|CF/i;
+  const good = /us|usa|america|美国|jp|japan|日本|sg|singapore|新加坡|CF|🇩🇪|🇺🇸|🇸🇬|🇯🇵|🇰🇷/i;
   const bad = /hk|hongkong|香港|cn|china|中国|tw|taiwan/i;
   return proxies.filter(p => !bad.test(p.name) && good.test(p.name)).map(p => p.name);
 }
