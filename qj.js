@@ -24,7 +24,7 @@ const aiManualDomains = [
 ];
 
 const processCategory = {
-  ai: ["cherrystudio.exe", "zed.exe", "windsurf.exe", "claude.exe", "opencode.exe", "Notion.exe"],
+  ai: ["cherrystudio.exe", "zed.exe", "windsurf.exe", "claude.exe", "opencode.exe", "Notion.exe"，"google.exe"],
   direct: ["wechat.exe", "clouddesktop-qml.exe", "WeChatAppEx.exe", "qq.exe", "everything.exe", "WXWork.exe"]
 };
 
