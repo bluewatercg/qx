@@ -70,41 +70,74 @@ function main(config) {
   const aiNodes = filterAiNodes(config.proxies || []);
 
   config["proxy-groups"] = [
-    { "name": "⚙️ 节点选择", "type": "select", "proxies": ["♻️ 延迟选优", "💸 AI开发", "DIRECT"], "include-all": true },
-    { "name": "♻️ 延迟选优", "type": enableUrlTest ? "url-test" : "select", "include-all": true, "url": "http://www.google.com/generate_204", "interval": 300 },
-    { "name": "💸 AI开发", "type": enableUrlTest ? "url-test" : "select", "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"], "url": "https://www.google.com/generate_204", "interval": 300 },
-    { "name": "🔗 全局直连", "type": "select", "proxies": ["DIRECT", "♻️ 延迟选优"] },
-    { "name": "🐟 漏网之鱼", "type": "select", "proxies": ["⚙️ 节点选择", "🔗 全局直连", "DIRECT"] }
-  ];
+  {
+    "name": "⚙️ 节点选择",
+    "type": "select",
+    "proxies": ["♻️ 延迟选优", "🤖 Gemini", "🪄 Copilot", "🔬 其他AI", "DIRECT"]
+  },
+  {
+    "name": "♻️ 延迟选优",
+    "type": enableUrlTest ? "url-test" : "select",
+    "include-all": true
+  },
+  {
+    "name": "🤖 Gemini",           // Gemini 专用组
+    "type": enableUrlTest ? "url-test" : "select",
+    "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"]
+  },
+  {
+    "name": "🪄 Copilot",          // Copilot 专用组
+    "type": enableUrlTest ? "url-test" : "select",
+    "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"]
+  },
+  {
+    "name": "🔬 其他AI",           // Claude、DeepSeek、Opencode 等
+    "type": enableUrlTest ? "url-test" : "select",
+    "proxies": aiNodes.length > 0 ? aiNodes : ["♻️ 延迟选优"]
+  },
+  {
+    "name": "🔗 全局直连",
+    "type": "select",
+    "proxies": ["DIRECT", "♻️ 延迟选优"]
+  },
+  {
+    "name": "🐟 漏网之鱼",
+    "type": "select",
+    "proxies": ["⚙️ 节点选择", "🔗 全局直连", "DIRECT"]
+  }
+];
 
   config["rules"] = [
-    // --- 第一层：绝对直连 (VPN & 内网) ---
-    "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
-    "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
-    "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
-    ...customDirectDomains.map(d => `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`),
+  // 1. 内网 + 进程直连（保持最高优先级）
+  "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
+  ...customDirectDomains.map(d => `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`),
+  ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
+  ...processCategory.ai.map(p => `PROCESS-NAME,${p},🔬 其他AI`),
 
-    // --- 第二层：进程识别 ---
-    ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
-    ...processCategory.ai.map(p => `PROCESS-NAME,${p},💸 AI开发`),
+  // 2. 具体 AI 服务分流（关键修改）
+  "DOMAIN-SUFFIX,gemini.google.com,🤖 Gemini,no-resolve",
+  "DOMAIN-SUFFIX,aistudio.google.com,🤖 Gemini,no-resolve",
+  "DOMAIN-KEYWORD,gemini,🤖 Gemini,no-resolve",
 
-    // --- 第三层：自动化 AI 分流 (缝合点) ---
-    ...aiManualDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发,no-resolve`),
-    "RULE-SET,ai_all,💸 AI开发",
-    "RULE-SET,google_domain,💸 AI开发",
-    "DOMAIN-KEYWORD,antigravity,💸 AI开发",
+  "DOMAIN-SUFFIX,copilot.microsoft.com,🪄 Copilot,no-resolve",
+  "DOMAIN-SUFFIX,edge.microsoft.com,🪄 Copilot,no-resolve",
+  "DOMAIN-KEYWORD,copilot,🪄 Copilot,no-resolve",
 
-    // --- 第四层：其他常用代理 ---
-    "RULE-SET,telegram_domain,⚙️ 节点选择",
+  // 其他 AI 服务走通用组
+  "RULE-SET,ai_all,🔬 其他AI",
+  "DOMAIN-SUFFIX,claude.ai,🔬 其他AI,no-resolve",
+  "DOMAIN-SUFFIX,anthropic.com,🔬 其他AI,no-resolve",
+  "DOMAIN-SUFFIX,opencode.ai,🔬 其他AI,no-resolve",
+  "DOMAIN-SUFFIX,deepseek.com,🔬 其他AI,no-resolve",
 
-    // --- 第五层：自动化国内直连 (缝合点) ---
-    "RULE-SET,cn_domain,🔗 全局直连",
-    "RULE-SET,cn_ip,🔗 全局直连",
-    "GEOIP,CN,🔗 全局直连,no-resolve",
-
-    // --- 第六层：兜底 ---
-    "MATCH,🐟 漏网之鱼"
-  ];
+  // 3. 其余规则保持原来顺序
+  "RULE-SET,google_domain,🤖 Gemini",
+  "RULE-SET,telegram_domain,⚙️ 节点选择",
+  "RULE-SET,cn_domain,🔗 全局直连",
+  "RULE-SET,cn_ip,🔗 全局直连",
+  "GEOIP,CN,🔗 全局直连,no-resolve",
+  "MATCH,🐟 漏网之鱼"
+];
 
   config["dns"] = dnsConfig;
   config["rule-providers"] = ruleProviders;
