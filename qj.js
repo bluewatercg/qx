@@ -1,13 +1,11 @@
 // ============================================================
-// ✅ Clash Meta · V7 融合增强版（FLClash 同步兼容版）
-// 修复：移除 async/await，main() 改为纯同步
+// ✅ Clash Meta · V7 融合增强版（FLClash 同步兼容 · 修复 X/Twitter 图片）
 // ============================================================
 
 const useFakeIP         = true;
 const enableMainUrlTest = false;
 const enableAiUrlTest   = true;
-
-const FINAL_FALLBACK = false;
+const FINAL_FALLBACK    = false;
 
 // ============================================================
 // 1. 自定义白名单 & 进程规则
@@ -129,10 +127,27 @@ const AIGemini = {
   probe: "https://generativelanguage.googleapis.com"
 };
 
+// ✅ 修复：补全 X/Twitter 图片 CDN 域名
 const AIGrok = {
   domains: [
-    "grok.com","grok.x.com","api.x.com",
-    "x.com","twitter.com","abs.twimg.com"
+    // 入口 / API
+    "grok.com",
+    "grok.x.com",
+    "api.x.com",
+    "x.com",
+    "twitter.com",
+
+    // ✅ 图片 / 视频 CDN（修复图片打不开）
+    "twimg.com",
+    "abs.twimg.com",
+    "pbs.twimg.com",
+    "video.twimg.com",
+    "ton.twimg.com",
+    "img.twimg.com",
+
+    // ✅ 短链 / 卡片预览
+    "t.co",
+    "cards.twitter.com",
   ],
   probe: "https://api.x.com"
 };
@@ -174,10 +189,15 @@ const dnsConfig = {
   "enhanced-mode": useFakeIP ? "fake-ip" : "redir-host",
   "fake-ip-range": "198.18.0.1/16",
   "fake-ip-filter": useFakeIP ? [
+    // 社区库
     "rule-set:fakeip_filter",
+
+    // 本地硬兜底
     "+.lan","+_tcp.local","+_udp.local","+_services._dns-sd._udp.local",
     ...customDirectDomains.flatMap(d => [`+.${d}`, d]),
     ...windowsConnectTest.flatMap(d => [d, `+.${d}`]),
+
+    // Microsoft
     "+.microsoft.com","+.static.microsoft",
     "+.onecdn.static.microsoft","+.res.public.onecdn.static.microsoft",
     "+.cloud.microsoft",
@@ -187,11 +207,25 @@ const dnsConfig = {
     "+.office.com","+.office.net","+.live.com",
     "+.windows.net","+.azure.com","+.azureedge.net",
     "+.msedge.net","+.akadns.net","+.msocdn.com",
+
+    // Google
     "+.google.com","+.googleapis.com","+.gstatic.com",
+
+    // GitHub
     "+.github.com","+.githubassets.com","+.githubusercontent.com",
+
+    // Notion
     "notion.so","+.notion.so","msgstore.www.notion.so",
     "+.notion.site","+.notion-static.com",
+
+    // Apple
     "+.apple.com","+.icloud.com",
+
+    // ✅ X / Twitter 图片 CDN
+    "+.twimg.com",
+    "+.t.co",
+
+    // Telegram
     ...Chat.domains.flatMap(d => [d, `+.${d}`]),
   ] : [],
   "default-nameserver": ["223.5.5.5","119.29.29.29"],
@@ -253,7 +287,7 @@ const ruleProviders = {
 };
 
 // ============================================================
-// ✅ 主函数（纯同步，FLClash 兼容）
+// 主函数（纯同步，FLClash 兼容）
 // ============================================================
 function main(config){
   const proxies = safeArray(config.proxies);
@@ -268,14 +302,13 @@ function main(config){
   const deSafe  = deNodes.length ? deNodes : aiSafe;
   const jpSafe  = jpNodes.length ? jpNodes : aiSafe;
 
-  // 节点分配（纯正则，无网络请求）
   const copilotNodes = usSafe;
-  const geminiNodes  = [...usSafe, ...jpSafe];
+  const geminiNodes  = [...usSafe,...jpSafe];
   const grokNodes    = usSafe;
-  const claudeNodes  = [...usSafe, ...deSafe];
-  const apiNodes     = [...usSafe, ...deSafe];
+  const claudeNodes  = [...usSafe,...deSafe];
+  const apiNodes     = [...usSafe,...deSafe];
 
-  const videoNodes = [...jpNodes, ...sgNodes]
+  const videoNodes = [...jpNodes,...sgNodes]
     .filter(n => !usReg.test(n) && !deReg.test(n));
   const videoSafe  = videoNodes.length ? [...videoNodes,"DIRECT"] : ["DIRECT"];
   const chatSafe   = videoNodes.length ? [...videoNodes,"DIRECT"] : ["DIRECT"];
@@ -324,7 +357,7 @@ function main(config){
     },
     { name:"♻️ 主选优",   type:enableMainUrlTest?"url-test":"select", "include-all":true },
     { name:"🔗 全局直连", type:"select", proxies:["DIRECT","♻️ 主选优"] },
-    { name:"💸 AI开发",   type:enableAiUrlTest?"url-test":"select", proxies:aiSafe },
+    { name:"💸 AI开发",   type:enableAiUrlTest?"url-test":"select",   proxies:aiSafe },
 
     { name:"🎬 视频",    type:"select", proxies:videoSafe },
     { name:"💬 聊天/TG", type:"select", proxies:chatSafe  },
@@ -346,37 +379,55 @@ function main(config){
   ];
 
   config.rules = [
+    // 内网
     "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
     "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
     "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
+
+    // Windows / Apple 探测
     ...windowsConnectTest.flatMap(d => [
       `DOMAIN,${d},🔗 全局直连,no-resolve`,
       `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`
     ]),
+
+    // 自定义直连
     ...customDirectDomains.flatMap(d => [
       `DOMAIN,${d},🔗 全局直连,no-resolve`,
       `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`
     ]),
+
+    // 进程分流
     ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
     ...processCategory.ai.map(p    => `PROCESS-NAME,${p},💸 AI开发`),
+
+    // 封 QUIC
     "AND,((NETWORK,udp),(DST-PORT,443)),REJECT",
+
+    // 特殊 AI 域名
     ...aiManualDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发,no-resolve`),
     "DOMAIN-KEYWORD,antigravity,💸 AI开发",
+
+    // AI 精细分流
     ...gen(AICopilot.domains, "🪄 Copilot"),
     ...gen(AIGemini.domains,  "🤖 Gemini"),
-    ...gen(AIGrok.domains,    "🗨️ Grok"),
+    ...gen(AIGrok.domains,    "🗨️ Grok"),   // ✅ 已含完整 twimg / t.co
     ...gen(AIClaude.domains,  "🧠 Claude"),
     ...gen(AIother.domains,   "🔬 其他AI"),
     ...gen(APIAI.domains,     "🔧 API-AI"),
-    ...gen(Video.domains,     "🎬 视频"),
-    ...gen(Chat.domains,      "💬 聊天/TG"),
-    ...genIP(Chat.ipcidr,     "💬 聊天/TG"),
+
+    // 视频 / 聊天
+    ...gen(Video.domains,  "🎬 视频"),
+    ...gen(Chat.domains,   "💬 聊天/TG"),
+    ...genIP(Chat.ipcidr,  "💬 聊天/TG"),
     "RULE-SET,telegram_domain,💬 聊天/TG",
     "RULE-SET,google_domain,🤖 Gemini",
     "RULE-SET,ai_all,🔬 其他AI",
+
+    // 国内
     "RULE-SET,cn_domain,🔗 全局直连",
     "RULE-SET,cn_ip,🔗 全局直连",
     "GEOIP,CN,🔗 全局直连,no-resolve",
+
     "MATCH,🐟 漏网之鱼"
   ];
 
