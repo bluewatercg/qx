@@ -1,6 +1,6 @@
 // ============================================================
 // ✅ Clash Meta · 最终版 v7（含三级兜底方案）
-// 兜底层级：
+// 兜底层级：https://raw.githubusercontent.com/bluewatercg/qx/refs/heads/main/qj.js
 // 1️⃣ 精细规则（AI / 视频 / 聊天各自走专属节点）
 // 2️⃣ 主选优兜底（命中但无专属组时走主组）
 // 3️⃣ 终极兜底（FINAL_FALLBACK 开关，一键全走主选优）
