@@ -1,11 +1,12 @@
 // ============================================================
-// ✅ Clash Meta · V7 融合增强版（FLClash 同步兼容 · 修复 X/Twitter 图片）
+// ✅ Clash Meta · V10 纯手动稳定版（AI 自动 + 手动双模式）
+//    每个 AI 都有：
+//    1) 自动组（url-test）
+//    2) 正式使用组（select，可选“自动组”或任意具体节点）
 // ============================================================
 
-const useFakeIP         = true;
-const enableMainUrlTest = false;
-const enableAiUrlTest   = true;
-const FINAL_FALLBACK    = false;
+const useFakeIP = true;
+const FINAL_FALLBACK = false;
 
 // ============================================================
 // 1. 自定义白名单 & 进程规则
@@ -13,7 +14,16 @@ const FINAL_FALLBACK    = false;
 const customDirectDomains = [
   "ddns.qjjg.net","qjjg.net","qjjg.ink","fnos.net",
   "yg.qjjg.net","syngentachina.com","local","localhost",
-  "aliyun.com","aliyuncs.com","aventura.net.cn","eastmoney.com"
+  "aliyun.com","aliyuncs.com","aventura.net.cn","eastmoney.com",
+
+  // 企业微信 / 微信
+  "localhost.work.weixin.qq.com",
+  "work.weixin.qq.com",
+  "weixin.qq.com",
+  "wx.qq.com",
+  "wechat.com",
+  "weixin.com",
+  "wxwork.qq.com"
 ];
 
 const aiManualDomains = [
@@ -21,7 +31,7 @@ const aiManualDomains = [
 ];
 
 const processCategory = {
-  ai:     ["cherrystudio.exe","zed.exe","windsurf.exe","claude.exe","opencode.exe","Notion.exe"],
+  ai: ["cherrystudio.exe","zed.exe","windsurf.exe","claude.exe","opencode.exe","Notion.exe"],
   direct: ["wechat.exe","clouddesktop-qml.exe","WeChatAppEx.exe","qq.exe","everything.exe","WXWork.exe"]
 };
 
@@ -34,30 +44,32 @@ const windowsConnectTest = [
 ];
 
 // ============================================================
-// 工具函数 & 节点正则
+// 工具函数
 // ============================================================
-function safeArray(arr){ return Array.isArray(arr) ? arr : []; }
+function safeArray(arr) {
+  return Array.isArray(arr) ? arr : [];
+}
 
-const badReg = /(hk|hongkong|hong.?kong|tw|taiwan|cn|china|中国|香港|台湾)/i;
+function uniq(arr) {
+  return [...new Set(safeArray(arr).filter(Boolean))];
+}
+
+const badReg = /(hk|hongkong|hong.?kong|cn|china|中国|香港)/i;
 const usReg  = /(us|usa|america|美国|洛杉矶|纽约|硅谷|los.?angeles|new.?york|silicon|🇺🇸)/i;
 const deReg  = /(de|germany|德国|法兰克福|frankfurt|berlin|柏林|🇩🇪)/i;
 const jpReg  = /(jp|japan|日本|东京|大阪|osaka|tokyo|🇯🇵)/i;
 const sgReg  = /(sg|singapore|新加坡|狮城|🇸🇬)/i;
+const twReg  = /(tw|taiwan|台湾|🇹🇼)/i;
 
-function pickNodes(proxies, goodReg, badReg){
+function pickNodes(proxies, goodReg, denyReg) {
   return safeArray(proxies)
     .filter(p =>
       p &&
       typeof p.name === "string" &&
       goodReg.test(p.name) &&
-      (badReg ? !badReg.test(p.name) : true)
+      (denyReg ? !denyReg.test(p.name) : true)
     )
     .map(p => p.name);
-}
-
-function filterAiNodes(proxies){
-  const goodReg = /(us|usa|america|美国|de|germany|德国|jp|japan|日本|sg|singapore|新加坡|CF|🇺🇸|🇩🇪|🇯🇵|🇸🇬|🇰🇷)/i;
-  return pickNodes(proxies, goodReg, badReg);
 }
 
 // ============================================================
@@ -115,7 +127,7 @@ const AICopilot = {
     "bing.com","bingapis.com","aka.ms",
     "visualstudio.com","aadrm.com","msft.net","xboxlive.com"
   ],
-  probe: "https://api.copilot.microsoft.com"
+  probe: "https://api.copilot.microsoft.com/"
 };
 
 const AIGemini = {
@@ -124,32 +136,18 @@ const AIGemini = {
     "ai.google.dev","generativelanguage.googleapis.com",
     "googleapis.com","gstatic.com"
   ],
-  probe: "https://generativelanguage.googleapis.com"
+  probe: "https://generativelanguage.googleapis.com/"
 };
 
-// ✅ 修复：补全 X/Twitter 图片 CDN 域名
 const AIGrok = {
   domains: [
-    // 入口 / API
-    "grok.com",
-    "grok.x.com",
-    "api.x.com",
-    "x.com",
-    "twitter.com",
-
-    // ✅ 图片 / 视频 CDN（修复图片打不开）
-    "twimg.com",
-    "abs.twimg.com",
-    "pbs.twimg.com",
-    "video.twimg.com",
-    "ton.twimg.com",
-    "img.twimg.com",
-
-    // ✅ 短链 / 卡片预览
-    "t.co",
-    "cards.twitter.com",
+    "grok.com","grok.x.com","api.x.com",
+    "x.com","twitter.com",
+    "twimg.com","abs.twimg.com","pbs.twimg.com",
+    "video.twimg.com","ton.twimg.com","img.twimg.com",
+    "t.co","cards.twitter.com"
   ],
-  probe: "https://api.x.com"
+  probe: "https://api.x.com/"
 };
 
 const AIClaude = {
@@ -157,7 +155,7 @@ const AIClaude = {
     "claude.ai","anthropic.com",
     "api.anthropic.com","statsig.anthropic.com"
   ],
-  probe: "https://api.anthropic.com"
+  probe: "https://api.anthropic.com/"
 };
 
 const AIother = {
@@ -189,30 +187,64 @@ const dnsConfig = {
   "enhanced-mode": useFakeIP ? "fake-ip" : "redir-host",
   "fake-ip-range": "198.18.0.1/16",
   "fake-ip-filter": useFakeIP ? [
-    // 社区库
     "rule-set:fakeip_filter",
 
-    // 本地硬兜底
     "+.lan","+_tcp.local","+_udp.local","+_services._dns-sd._udp.local",
+    "localhost","+.localhost",
+
     ...customDirectDomains.flatMap(d => [`+.${d}`, d]),
+
+    "localhost.work.weixin.qq.com",
+    "+.work.weixin.qq.com",
+    "+.weixin.qq.com",
+    "+.wx.qq.com",
+    "+.wechat.com",
+    "+.weixin.com",
+    "+.wxwork.qq.com",
+
     ...windowsConnectTest.flatMap(d => [d, `+.${d}`]),
 
-    // Microsoft
-    "+.microsoft.com","+.static.microsoft",
-    "+.onecdn.static.microsoft","+.res.public.onecdn.static.microsoft",
+    // Microsoft / Copilot
+    "+.copilot.microsoft.com",
+    "+.api.copilot.microsoft.com",
+    "+.sydney.bing.com",
+    "+.microsoft.com",
+    "+.static.microsoft",
+    "+.onecdn.static.microsoft",
+    "+.res.public.onecdn.static.microsoft",
     "+.cloud.microsoft",
-    "+.officecdn.microsoft.com","+.cdn.office.net",
-    "+.msauth.net","+.msauthimages.net",
-    "+.msftauth.net","+.msftauthimages.net",
-    "+.office.com","+.office.net","+.live.com",
-    "+.windows.net","+.azure.com","+.azureedge.net",
-    "+.msedge.net","+.akadns.net","+.msocdn.com",
+    "+.officecdn.microsoft.com",
+    "+.cdn.office.net",
+    "+.msauth.net",
+    "+.msauthimages.net",
+    "+.msftauth.net",
+    "+.msftauthimages.net",
+    "+.office.com",
+    "+.office.net",
+    "+.live.com",
+    "+.windows.net",
+    "+.azure.com",
+    "+.azureedge.net",
+    "+.msedge.net",
+    "+.akadns.net",
+    "+.msocdn.com",
 
-    // Google
-    "+.google.com","+.googleapis.com","+.gstatic.com",
+    // Claude
+    "+.anthropic.com",
+    "+.api.anthropic.com",
+    "+.statsig.anthropic.com",
+
+    // Gemini
+    "+.googleapis.com",
+    "+.generativelanguage.googleapis.com",
+    "+.gemini.google.com",
+    "+.google.com",
+    "+.gstatic.com",
 
     // GitHub
-    "+.github.com","+.githubassets.com","+.githubusercontent.com",
+    "+.github.com",
+    "+.githubassets.com",
+    "+.githubusercontent.com",
 
     // Notion
     "notion.so","+.notion.so","msgstore.www.notion.so",
@@ -221,12 +253,13 @@ const dnsConfig = {
     // Apple
     "+.apple.com","+.icloud.com",
 
-    // ✅ X / Twitter 图片 CDN
-    "+.twimg.com",
-    "+.t.co",
+    // X / Twitter
+    "+.twimg.com","+.t.co",
+    "x.com","+.x.com",
+    "twitter.com","+.twitter.com",
 
     // Telegram
-    ...Chat.domains.flatMap(d => [d, `+.${d}`]),
+    ...Chat.domains.flatMap(d => [d, `+.${d}`])
   ] : [],
   "default-nameserver": ["223.5.5.5","119.29.29.29"],
   "nameserver": [
@@ -239,7 +272,7 @@ const dnsConfig = {
       "https://dns.google/dns-query",
       "https://cloudflare-dns.com/dns-query"
     ],
-    "geosite:cn":      ["223.5.5.5","119.29.29.29"],
+    "geosite:cn": ["223.5.5.5","119.29.29.29"],
     "geosite:private": ["223.5.5.5","119.29.29.29"],
     ...Object.fromEntries(
       windowsConnectTest.map(d => [d, ["223.5.5.5","119.29.29.29"]])
@@ -255,91 +288,129 @@ const dnsConfig = {
 // ============================================================
 const ruleProviders = {
   fakeip_filter: {
-    type:"http", behavior:"domain", format:"mrs",
-    url:"https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs",
-    path:"./ruleset/fakeip_filter.mrs", interval:86400
+    type: "http",
+    behavior: "domain",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs",
+    path: "./ruleset/fakeip_filter.mrs",
+    interval: 86400
   },
   ai_all: {
-    type:"http", behavior:"domain", format:"mrs",
-    url:"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs",
-    path:"./ruleset/ai_all.mrs", interval:86400
+    type: "http",
+    behavior: "domain",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs",
+    path: "./ruleset/ai_all.mrs",
+    interval: 86400
   },
   cn_domain: {
-    type:"http", behavior:"domain", format:"mrs",
-    url:"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs",
-    path:"./ruleset/cn_domain.mrs", interval:86400
+    type: "http",
+    behavior: "domain",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs",
+    path: "./ruleset/cn_domain.mrs",
+    interval: 86400
   },
   cn_ip: {
-    type:"http", behavior:"ipcidr", format:"mrs",
-    url:"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs",
-    path:"./ruleset/cn_ip.mrs", interval:86400
+    type: "http",
+    behavior: "ipcidr",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs",
+    path: "./ruleset/cn_ip.mrs",
+    interval: 86400
   },
   google_domain: {
-    type:"http", behavior:"domain", format:"mrs",
-    url:"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs",
-    path:"./ruleset/google_domain.mrs", interval:86400
+    type: "http",
+    behavior: "domain",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs",
+    path: "./ruleset/google_domain.mrs",
+    interval: 86400
   },
   telegram_domain: {
-    type:"http", behavior:"domain", format:"mrs",
-    url:"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs",
-    path:"./ruleset/telegram_domain.mrs", interval:86400
+    type: "http",
+    behavior: "domain",
+    format: "mrs",
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs",
+    path: "./ruleset/telegram_domain.mrs",
+    interval: 86400
   }
 };
 
 // ============================================================
 // 主函数（纯同步，FLClash 兼容）
 // ============================================================
-function main(config){
+function main(config) {
   const proxies = safeArray(config.proxies);
+  const allNodeNames = uniq(proxies.map(p => p && p.name).filter(Boolean));
 
-  const usNodes = pickNodes(proxies, usReg, badReg);
-  const deNodes = pickNodes(proxies, deReg, badReg);
   const jpNodes = pickNodes(proxies, jpReg, badReg);
   const sgNodes = pickNodes(proxies, sgReg, badReg);
-  const aiNodes = filterAiNodes(proxies);
-  const aiSafe  = aiNodes.length ? aiNodes : ["DIRECT"];
-  const usSafe  = usNodes.length ? usNodes : aiSafe;
-  const deSafe  = deNodes.length ? deNodes : aiSafe;
-  const jpSafe  = jpNodes.length ? jpNodes : aiSafe;
+  const twNodes = pickNodes(proxies, twReg, null); // ✅ TW 允许参与测试
 
-  const copilotNodes = usSafe;
-  const geminiNodes  = [...usSafe,...jpSafe];
-  const grokNodes    = usSafe;
-  const claudeNodes  = [...usSafe,...deSafe];
-  const apiNodes     = [...usSafe,...deSafe];
-
-  const videoNodes = [...jpNodes,...sgNodes]
-    .filter(n => !usReg.test(n) && !deReg.test(n));
-  const videoSafe  = videoNodes.length ? [...videoNodes,"DIRECT"] : ["DIRECT"];
-  const chatSafe   = videoNodes.length ? [...videoNodes,"DIRECT"] : ["DIRECT"];
+  const videoNodes = uniq([...jpNodes, ...sgNodes, ...twNodes]).filter(n => !usReg.test(n) && !deReg.test(n));
+  const videoSafe  = videoNodes.length ? [...videoNodes, "DIRECT"] : ["DIRECT"];
+  const chatSafe   = videoNodes.length ? [...videoNodes, "DIRECT"] : ["DIRECT"];
 
   const gen   = (arr, grp) => arr.map(d  => `DOMAIN-SUFFIX,${d},${grp},no-resolve`);
   const genIP = (arr, grp) => arr.map(ip => `IP-CIDR,${ip},${grp},no-resolve`);
 
-  // ============================================================
-  // 🆘 FINAL_FALLBACK 极简模式
-  // ============================================================
-  if (FINAL_FALLBACK){
+  const copilotSelect = uniq(["🪄 Copilot-自动", ...allNodeNames, "DIRECT"]);
+  const claudeSelect  = uniq(["🧠 Claude-自动",  ...allNodeNames, "DIRECT"]);
+  const geminiSelect  = uniq(["🤖 Gemini-自动",  ...allNodeNames, "DIRECT"]);
+  const grokSelect    = uniq(["🗨️ Grok-自动",    ...allNodeNames, "DIRECT"]);
+  const apiaiSelect   = uniq(["🔧 API-AI-自动",  ...allNodeNames, "DIRECT"]);
+  const otherAiSelect = uniq(["🔬 其他AI-自动",  ...allNodeNames, "DIRECT"]);
+
+  if (FINAL_FALLBACK) {
     config["proxy-groups"] = [
       { name:"♻️ 主选优",   type:"select", "include-all":true },
       { name:"🔗 全局直连", type:"select", proxies:["DIRECT","♻️ 主选优"] },
-      { name:"🐟 漏网之鱼", type:"select", proxies:["♻️ 主选优","DIRECT"] }
+      { name:"🐟 漏网之鱼", type:"select", proxies:["♻️ 主选优","DIRECT"] },
+
+      // 自动组
+      { name:"🪄 Copilot-自动", type:"url-test", "include-all":true, url:AICopilot.probe, interval:600, timeout:5000, tolerance:150, lazy:true },
+      { name:"🧠 Claude-自动",  type:"url-test", "include-all":true, url:AIClaude.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
+      { name:"🤖 Gemini-自动",  type:"url-test", "include-all":true, url:AIGemini.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
+      { name:"🗨️ Grok-自动",    type:"url-test", "include-all":true, url:AIGrok.probe,    interval:600, timeout:5000, tolerance:150, lazy:true },
+      { name:"🔧 API-AI-自动",  type:"url-test", "include-all":true, url:APIAI.probe,     interval:600, timeout:5000, tolerance:150, lazy:true },
+      { name:"🔬 其他AI-自动",  type:"url-test", "include-all":true, url:"https://www.perplexity.ai/", interval:600, timeout:5000, tolerance:150, lazy:true },
+
+      // 正式使用组（可选自动组，也可手动选任何具体节点）
+      { name:"🪄 Copilot", type:"select", proxies:copilotSelect },
+      { name:"🧠 Claude",  type:"select", proxies:claudeSelect },
+      { name:"🤖 Gemini",  type:"select", proxies:geminiSelect },
+      { name:"🗨️ Grok",    type:"select", proxies:grokSelect },
+      { name:"🔬 其他AI",  type:"select", proxies:otherAiSelect },
+      { name:"🔧 API-AI",  type:"select", proxies:apiaiSelect }
     ];
+
     config.rules = [
       "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
       "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
       "IP-CIDR,10.0.0.0/8,🔗 全局直连,no-resolve",
+
       ...customDirectDomains.flatMap(d => [
         `DOMAIN,${d},🔗 全局直连,no-resolve`,
         `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`
       ]),
+
       ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
-      ...processCategory.ai.map(p    => `PROCESS-NAME,${p},♻️ 主选优`),
+      ...processCategory.ai.map(p    => `PROCESS-NAME,${p},🔧 API-AI`),
+
+      ...gen(AICopilot.domains, "🪄 Copilot"),
+      ...gen(AIClaude.domains,  "🧠 Claude"),
+      ...gen(AIGemini.domains,  "🤖 Gemini"),
+      ...gen(AIGrok.domains,    "🗨️ Grok"),
+      ...gen(AIother.domains,   "🔬 其他AI"),
+      ...gen(APIAI.domains,     "🔧 API-AI"),
+
       "RULE-SET,cn_domain,🔗 全局直连",
       "RULE-SET,cn_ip,🔗 全局直连",
       "GEOIP,CN,🔗 全局直连,no-resolve",
       "MATCH,🐟 漏网之鱼"
     ];
+
     config.dns = dnsConfig;
     config["rule-providers"] = ruleProviders;
     proxies.forEach(p => { p.udp = true; });
@@ -347,7 +418,7 @@ function main(config){
   }
 
   // ============================================================
-  // 正常模式：完整精细分流
+  // 正常模式：AI 自动 + 手动双模式
   // ============================================================
   config["proxy-groups"] = [
     {
@@ -355,25 +426,29 @@ function main(config){
       type: "select",
       proxies: ["♻️ 主选优","💸 AI开发","🔗 全局直连","DIRECT"]
     },
-    { name:"♻️ 主选优",   type:enableMainUrlTest?"url-test":"select", "include-all":true },
+
+    { name:"♻️ 主选优",   type:"select", "include-all":true },
     { name:"🔗 全局直连", type:"select", proxies:["DIRECT","♻️ 主选优"] },
-    { name:"💸 AI开发",   type:enableAiUrlTest?"url-test":"select",   proxies:aiSafe },
+    { name:"💸 AI开发",   type:"select", "include-all":true },
 
     { name:"🎬 视频",    type:"select", proxies:videoSafe },
-    { name:"💬 聊天/TG", type:"select", proxies:chatSafe  },
+    { name:"💬 聊天/TG", type:"select", proxies:chatSafe },
 
-    { name:"🪄 Copilot-主", type:"url-test", url:AICopilot.probe, interval:120, timeout:3500, tolerance:100, proxies:copilotNodes },
-    { name:"🪄 Copilot",    type:"fallback",  url:AICopilot.probe, interval:120, timeout:3500, proxies:["🪄 Copilot-主","♻️ 主选优"] },
+    // AI 自动组（url-test）
+    { name:"🪄 Copilot-自动", type:"url-test", "include-all":true, url:AICopilot.probe, interval:600, timeout:5000, tolerance:150, lazy:true },
+    { name:"🧠 Claude-自动",  type:"url-test", "include-all":true, url:AIClaude.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
+    { name:"🤖 Gemini-自动",  type:"url-test", "include-all":true, url:AIGemini.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
+    { name:"🗨️ Grok-自动",    type:"url-test", "include-all":true, url:AIGrok.probe,    interval:600, timeout:5000, tolerance:150, lazy:true },
+    { name:"🔧 API-AI-自动",  type:"url-test", "include-all":true, url:APIAI.probe,     interval:600, timeout:5000, tolerance:150, lazy:true },
+    { name:"🔬 其他AI-自动",  type:"url-test", "include-all":true, url:"https://www.perplexity.ai/", interval:600, timeout:5000, tolerance:150, lazy:true },
 
-    { name:"🤖 Gemini-主",  type:"url-test", url:AIGemini.probe,  interval:120, timeout:3500, tolerance:100, proxies:geminiNodes },
-    { name:"🤖 Gemini",     type:"fallback",  url:AIGemini.probe,  interval:120, timeout:3500, proxies:["🤖 Gemini-主","♻️ 主选优"] },
-
-    { name:"🗨️ Grok",   type:enableAiUrlTest?"url-test":"select", url:AIGrok.probe,   interval:120, timeout:3500, tolerance:100, proxies:grokNodes  },
-    { name:"🧠 Claude",  type:enableAiUrlTest?"url-test":"select", url:AIClaude.probe, interval:120, timeout:3500, tolerance:100, proxies:claudeNodes },
-    { name:"🔬 其他AI",  type:enableAiUrlTest?"url-test":"select", proxies:aiSafe },
-
-    { name:"🔧 API-AI-主", type:"url-test", url:APIAI.probe, interval:120, timeout:3500, tolerance:100, proxies:apiNodes },
-    { name:"🔧 API-AI",    type:"fallback",  url:APIAI.probe, interval:120, timeout:3500, proxies:["🔧 API-AI-主","💸 AI开发"] },
+    // AI 正式使用组（可选自动组，也可手动选任意具体节点）
+    { name:"🪄 Copilot", type:"select", proxies:copilotSelect },
+    { name:"🧠 Claude",  type:"select", proxies:claudeSelect },
+    { name:"🤖 Gemini",  type:"select", proxies:geminiSelect },
+    { name:"🗨️ Grok",    type:"select", proxies:grokSelect },
+    { name:"🔬 其他AI",  type:"select", proxies:otherAiSelect },
+    { name:"🔧 API-AI",  type:"select", proxies:apiaiSelect },
 
     { name:"🐟 漏网之鱼", type:"select", proxies:["⚙️ 节点选择","🔗 全局直连","DIRECT"] }
   ];
@@ -390,6 +465,15 @@ function main(config){
       `DOMAIN-SUFFIX,${d},🔗 全局直连,no-resolve`
     ]),
 
+    // 企业微信 / 微信本地域名
+    "DOMAIN,localhost.work.weixin.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,work.weixin.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,weixin.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,wx.qq.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,wechat.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,weixin.com,🔗 全局直连,no-resolve",
+    "DOMAIN-SUFFIX,wxwork.qq.com,🔗 全局直连,no-resolve",
+
     // 自定义直连
     ...customDirectDomains.flatMap(d => [
       `DOMAIN,${d},🔗 全局直连,no-resolve`,
@@ -400,18 +484,15 @@ function main(config){
     ...processCategory.direct.map(p => `PROCESS-NAME,${p},🔗 全局直连`),
     ...processCategory.ai.map(p    => `PROCESS-NAME,${p},💸 AI开发`),
 
-    // 封 QUIC
-    "AND,((NETWORK,udp),(DST-PORT,443)),REJECT",
-
     // 特殊 AI 域名
     ...aiManualDomains.map(d => `DOMAIN-SUFFIX,${d},💸 AI开发,no-resolve`),
     "DOMAIN-KEYWORD,antigravity,💸 AI开发",
 
-    // AI 精细分流
+    // AI 精细分流（正式只走 select 组）
     ...gen(AICopilot.domains, "🪄 Copilot"),
-    ...gen(AIGemini.domains,  "🤖 Gemini"),
-    ...gen(AIGrok.domains,    "🗨️ Grok"),   // ✅ 已含完整 twimg / t.co
     ...gen(AIClaude.domains,  "🧠 Claude"),
+    ...gen(AIGemini.domains,  "🤖 Gemini"),
+    ...gen(AIGrok.domains,    "🗨️ Grok"),
     ...gen(AIother.domains,   "🔬 其他AI"),
     ...gen(APIAI.domains,     "🔧 API-AI"),
 
