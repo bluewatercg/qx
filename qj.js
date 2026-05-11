@@ -363,28 +363,100 @@ function main(config) {
   const otherAiSelect = uniq(["🔬 其他AI-自动",  ...allNodeNames, "DIRECT"]);
 
   if (FINAL_FALLBACK) {
-    config["proxy-groups"] = [
-      { name:"♻️ 主选优",   type:"select", "include-all":true },
-      { name:"🔗 全局直连", type:"select", proxies:["DIRECT","♻️ 主选优"] },
-      { name:"🐟 漏网之鱼", type:"select", proxies:["♻️ 主选优","DIRECT"] },
+config["proxy-groups"] = [
+  {
+    name: "⚙️ 节点选择",
+    type: "select",
+    proxies: ["🤖 自动选择","💸 AI开发","🔗 全局直连","DIRECT"]
+  },
 
-      // 自动组
-      { name:"🪄 Copilot-自动", type:"url-test", "include-all":true, url:AICopilot.probe, interval:600, timeout:5000, tolerance:150, lazy:true },
-      { name:"🧠 Claude-自动",  type:"url-test", "include-all":true, url:AIClaude.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
-      { name:"🤖 Gemini-自动",  type:"url-test", "include-all":true, url:AIGemini.probe,  interval:600, timeout:5000, tolerance:150, lazy:true },
-      { name:"🗨️ Grok-自动",    type:"url-test", "include-all":true, url:AIGrok.probe,    interval:600, timeout:5000, tolerance:150, lazy:true },
-      { name:"🔧 API-AI-自动",  type:"url-test", "include-all":true, url:APIAI.probe,     interval:600, timeout:5000, tolerance:150, lazy:true },
-      { name:"🔬 其他AI-自动",  type:"url-test", "include-all":true, url:"https://www.perplexity.ai/", interval:600, timeout:5000, tolerance:150, lazy:true },
+  // ✅ 自动 fallback（全局）
+  {
+    name: "🤖 自动选择",
+    type: "fallback",
+    "include-all": true,
+    url: "http://www.gstatic.com/generate_204",
+    interval: 0
+  },
 
-      // 正式使用组（可选自动组，也可手动选任何具体节点）
-      { name:"🪄 Copilot", type:"select", proxies:copilotSelect },
-      { name:"🧠 Claude",  type:"select", proxies:claudeSelect },
-      { name:"🤖 Gemini",  type:"select", proxies:geminiSelect },
-      { name:"🗨️ Grok",    type:"select", proxies:grokSelect },
-      { name:"🔬 其他AI",  type:"select", proxies:otherAiSelect },
-      { name:"🔧 API-AI",  type:"select", proxies:apiaiSelect }
-    ];
+  // ✅ AI 专用 fallback
+  {
+    name: "💸 AI开发",
+    type: "fallback",
+    "include-all": true,
+    url: "https://api.github.com/",
+    interval: 0
+  },
 
+  // ✅ 手动节点（你自己选）
+  { name:"✋ Copilot-手动", type:"select", "include-all":true },
+  { name:"✋ Claude-手动",  type:"select", "include-all":true },
+  { name:"✋ Gemini-手动",  type:"select", "include-all":true },
+  { name:"✋ Grok-手动",    type:"select", "include-all":true },
+  { name:"✋ 其他AI-手动",  type:"select", "include-all":true },
+  { name:"✋ API-手动",     type:"select", "include-all":true },
+
+  // ✅ 直连
+  {
+    name: "🔗 全局直连",
+    type: "select",
+    proxies: ["DIRECT","🤖 自动选择"]
+  },
+
+  // ✅ 常规分流（低耗）
+  {
+    name: "🎬 视频",
+    type: "fallback",
+    "include-all": true,
+    url: "http://www.gstatic.com/generate_204",
+    interval: 0
+  },
+  {
+    name: "💬 聊天/TG",
+    type: "fallback",
+    "include-all": true,
+    url: "http://www.gstatic.com/generate_204",
+    interval: 0
+  },
+
+  // ✅ AI 分流（自动 + 手动双模式）
+  { 
+    name:"🪄 Copilot",
+    type:"select",
+    proxies:["✋ Copilot-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+  { 
+    name:"🧠 Claude",
+    type:"select",
+    proxies:["✋ Claude-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+  { 
+    name:"🤖 Gemini",
+    type:"select",
+    proxies:["✋ Gemini-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+  { 
+    name:"🗨️ Grok",
+    type:"select",
+    proxies:["✋ Grok-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+  { 
+    name:"🔬 其他AI",
+    type:"select",
+    proxies:["✋ 其他AI-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+  { 
+    name:"🔧 API-AI",
+    type:"select",
+    proxies:["✋ API-手动","💸 AI开发","🤖 自动选择","DIRECT"]
+  },
+
+  {
+    name: "🐟 漏网之鱼",
+    type: "select",
+    proxies: ["⚙️ 节点选择","🔗 全局直连","DIRECT"]
+  }
+];
     config.rules = [
       "IP-CIDR,192.168.0.0/16,🔗 全局直连,no-resolve",
       "IP-CIDR,172.16.0.0/12,🔗 全局直连,no-resolve",
