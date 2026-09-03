@@ -1,0 +1,3 @@
+# Nikki custom restricted-site rules
+DOMAIN-SUFFIX,researchgate.net
+DOMAIN,ubicomplab.cs.washington.edu
