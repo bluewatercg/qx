@@ -1,4 +1,9 @@
 # Nikki custom AI and developer rules
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,microsoft
+DOMAIN-KEYWORD,github
+DOMAIN-KEYWORD,githubusercontent
+DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,shuaiapi.com
 DOMAIN-SUFFIX,nvidia.com
 DOMAIN-SUFFIX,anyrouter.top
