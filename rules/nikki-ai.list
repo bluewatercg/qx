@@ -1,6 +1,6 @@
 # Nikki custom AI and developer rules
-DOMAIN,integrate.api.nvidia.com
-DOMAIN,ai.api.nvidia.com
+DOMAIN-SUFFIX,shuaiapi.com
+DOMAIN-SUFFIX,nvidia.com
 DOMAIN-SUFFIX,anyrouter.top
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
