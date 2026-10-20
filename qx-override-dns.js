@@ -18,7 +18,15 @@ function main(config) {
 
   // Mihomo only accepts +.domain here; a glob such as *.jd.com is
   // silently dropped and the suffix keeps resolving to a fake address.
-  const add = ["+.jd.com", "+.360buyimg.com", "+.jd.hk"];
+  //
+  // Routing listed only jd.com / 360buyimg.com / jd.hk, which covers the
+  // shop API but not the asset CDNs. jd.com's page pulls jstatic.3.cn,
+  // cdn.3.cn and vod.300hu.com, and an uncovered host resolves to a fake
+  // address again, so those are listed too.
+  const add = [
+    "+.jd.com", "+.360buyimg.com", "+.jd.hk",
+    "+.3.cn", "+.300hu.com",
+  ];
   const existing = config.dns["fake-ip-filter"] || [];
   config.dns["fake-ip-filter"] = [...new Set([...existing, ...add])];
 
