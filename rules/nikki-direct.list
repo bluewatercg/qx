@@ -6,6 +6,11 @@ DOMAIN-SUFFIX,berrycode.codes
 DOMAIN-SUFFIX,a-ocnfniawgw.cn-shanghai.fcapp.run
 DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,msftncsi.com
+# JD: direct-listed explicitly so the app does not depend on ChinaDomain
+# membership or a GEOIP,CN hit. It was already direct in practice.
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,jd.hk
 DOMAIN-SUFFIX,captive.apple.com
 DOMAIN-SUFFIX,airport.us.apple.com
 DOMAIN-SUFFIX,ddns.qjjg.net
