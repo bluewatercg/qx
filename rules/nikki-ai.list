@@ -1,4 +1,5 @@
 # Nikki custom AI and developer rules
+DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,microsoft
 DOMAIN-KEYWORD,github
 DOMAIN-KEYWORD,githubusercontent
