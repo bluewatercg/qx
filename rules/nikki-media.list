@@ -1,0 +1,13 @@
+# Nikki custom streaming-video rules
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtube-nocookie.com
+DOMAIN-SUFFIX,netflix.com
+DOMAIN-SUFFIX,nflxvideo.net
+DOMAIN-SUFFIX,nflximg.net
+DOMAIN-SUFFIX,nflxso.net
+DOMAIN-SUFFIX,disneyplus.com
+DOMAIN-SUFFIX,primevideo.com
+DOMAIN-SUFFIX,hbomax.com
+DOMAIN-SUFFIX,max.com
