@@ -1,0 +1,387 @@
+# ============================================================
+# honk 完整配置
+# 支持 V2Ray URL、mihomo 等订阅格式
+# ============================================================
+
+
+# ------------------------------------------------------------
+# 节点订阅
+#
+# 注意：
+# route: Proxy 需要 honk 缓存中已经存在可用节点。
+# 如果是首次安装，建议先使用 direct，或者配置手动引导节点。
+# ------------------------------------------------------------
+subscription {
+    sub: 'https://' {
+        route: Proxy
+    }
+}
+
+
+# ------------------------------------------------------------
+# 手动节点示例
+#
+# 如果订阅必须经过代理下载，可取消注释并替换密码、
+# 服务器域名、端口和 SNI。
+# ------------------------------------------------------------
+# node {
+#     my_vps: 'hysteria2://password@vps.example.com:443/?sni=vps.example.com'
+# }
+
+
+# ------------------------------------------------------------
+# 策略组
+#
+# 可用策略：
+#
+# select          在面板中手动选择节点
+# min_moving_avg  选择平均延迟最低的节点
+# fallback        按配置顺序选择第一个可用节点
+# loadbalance     在多个节点之间轮询
+# score           根据实际连接质量自动评分选择
+# ------------------------------------------------------------
+group {
+    # 默认代理组
+    Proxy {
+        # 排除订阅信息、流量信息、到期信息和直连节点
+        filter: !name(regex: 'Site officiel|Remaining|Traffic|Package|Free|Subscription|Expiration Date|Direct Connection|Expire Date|ExpireDate|官网|剩余|流量|套餐|免费|订阅|到期时间|直连')
+
+        # 当前选择不可用时，转交给 Final 组
+        final: Final
+
+        # 切换节点后中断旧连接，使新连接立即生效
+        interrupt_connections: true
+    }
+
+    # 自动评分组
+    Final {
+        # 排除订阅信息、流量信息、到期信息和直连节点
+        filter: !name(regex: 'Site officiel|Remaining|Traffic|Package|Free|Subscription|Expiration Date|Direct Connection|Expire Date|ExpireDate|官网|剩余|流量|套餐|免费|订阅|到期时间|直连')
+
+        # 根据实际连接质量自动选择节点
+        policy: score
+    }
+
+    # OpenAI、Google 和 Microsoft Cloud 专用组
+    #
+    # 优先使用名称中包含 F0 或“家宽”的节点。
+    # 如果没有匹配节点，则回退到 Proxy 组。
+    OpenAi {
+        filter: name(keyword: 'F0', keyword: '家宽')
+        policy: score
+        final: Proxy
+
+        # 专用节点变化后中断旧连接
+        interrupt_connections: true
+    }
+}
+
+
+# ------------------------------------------------------------
+# DNS 设置
+# ------------------------------------------------------------
+dns {
+    upstream {
+        # 境外域名使用 Google DoH
+        remote: 'https://8.8.8.8/dns-query'
+
+        # 国内域名使用阿里云 DoH
+        local: 'https://223.5.5.5/dns-query'
+    }
+
+    routing {
+        request {
+            # 拒绝 HTTPS/SVCB DNS 记录
+            # 降低客户端提前启用 HTTP/3 或 QUIC 的概率
+            qtype(https, svcb) -> reject
+
+            # 中国大陆域名使用国内 DNS
+            qname(geosite: cn) -> local
+
+            # 非中国大陆域名使用境外 DNS
+            qname(geosite: geolocation-!cn) -> remote
+
+            # 未匹配域名默认使用境外 DNS
+            fallback: remote
+        }
+
+        response {
+            # 境外 DNS 返回中国大陆 IP 时，
+            # 改用国内 DNS 重新解析，以获得更合适的国内 CDN 地址
+            upstream(remote) && ip(geoip: cn) -> local
+
+            # 接受其他 DNS 响应
+            fallback: accept
+        }
+    }
+}
+
+
+# ------------------------------------------------------------
+# 流量路由
+#
+# 域名分流统一写入一个 domain()，方便 honk 和 doona 解析、展示。
+# ------------------------------------------------------------
+routing {
+    # 私有网络始终直连
+    dip(geoip: private) && !dport(53) -> direct(must)
+
+    # 禁止 UDP/443，也就是 QUIC 和 HTTP/3
+    # 使应用回退到 TCP/443
+    l4proto(udp) && dport(443) -> block
+
+    # --------------------------------------------------------
+    # AI、Google、Microsoft、GitHub 及用户指定网站
+    #
+    # keyword：域名中只要包含指定字符串就匹配
+    # suffix：匹配主域名及所有子域名
+    # full：只匹配完整域名
+    # --------------------------------------------------------
+    domain(
+        # ====================================================
+        # 关键词规则
+        # ====================================================
+        keyword: 'google',
+        keyword: 'microsoft',
+        keyword: 'github',
+        keyword: 'openai',
+        keyword: 'chatgpt',
+        keyword: 'cocopilot',
+        keyword: 'openaicom-api',
+        keyword: 'antigravity',
+
+        # ====================================================
+        # OpenAI 和 ChatGPT
+        # ====================================================
+        suffix: 'openai.com',
+        suffix: 'chatgpt.com',
+        suffix: 'oaistatic.com',
+        suffix: 'oaiusercontent.com',
+        suffix: 'oaistatsig.com',
+        suffix: 'openaimerge.com',
+        suffix: 'openaicom.imgix.net',
+        suffix: 'openaiapi-site.azureedge.net',
+        suffix: 'chatgpt.livekit.cloud',
+        suffix: 'host.livekit.cloud',
+        suffix: 'turn.livekit.cloud',
+        suffix: 'sora.com',
+
+        # ====================================================
+        # OpenAI 登录、验证及相关依赖
+        # ====================================================
+        suffix: 'auth0.com',
+        suffix: 'arkoselabs.com',
+        suffix: 'featuregates.org',
+        suffix: 'statsigapi.net',
+        suffix: 'intercom.io',
+        suffix: 'intercomcdn.com',
+        suffix: 'launchdarkly.com',
+        suffix: 'algolia.net',
+        suffix: 'segment.io',
+        suffix: 'sentry.io',
+        suffix: 'stripe.com',
+        suffix: 'identrust.com',
+        suffix: 'observeit.net',
+        suffix: 'challenges.cloudflare.com',
+        suffix: 'cdn.cloudflare.net',
+        suffix: 'azureedge.net',
+        suffix: 'blob.core.windows.net',
+        full: 'browser-intake-datadoghq.com',
+        full: 'static.cloudflareinsights.com',
+
+        # ====================================================
+        # Microsoft Copilot、Bing 和相关服务
+        # ====================================================
+        suffix: 'cloud.microsoft',
+        suffix: 'bing.com',
+        suffix: 'bingapis.com',
+        suffix: 'edgeservices.bing.com',
+        suffix: 'api.microsoftapp.net',
+        suffix: 'bing-shopping.microsoft-falcon.io',
+        full: 'api.msn.com',
+        full: 'assets.msn.com',
+        full: 'in.appcenter.ms',
+        full: 'odc.officeapps.live.com',
+        full: 'r.bing.com',
+        full: 'sydney.bing.com',
+        full: 'www.bing.com',
+        full: 'services.bingapis.com',
+
+        # ====================================================
+        # Google Gemini 和生成式 AI
+        #
+        # keyword: google 已覆盖：
+        # google.com、googleapis.com、googleusercontent.com、
+        # gemini.google.com、aistudio.google.com 等。
+        # ====================================================
+        suffix: 'generativeai.google',
+        suffix: 'antigravity-unleash.goog',
+
+        # ====================================================
+        # Anthropic 和 Claude
+        # ====================================================
+        suffix: 'anthropic.com',
+        suffix: 'claude.ai',
+
+        # ====================================================
+        # AI 平台、模型服务和开发工具
+        # ====================================================
+        suffix: 'ai.com',
+        suffix: 'civitai.com',
+        suffix: 'opencode.ai',
+        suffix: 'cursor.com',
+        suffix: 'cursor.sh',
+        suffix: 'cursorapi.com',
+        suffix: 'windsurf.com',
+        suffix: 'codeium.com',
+        suffix: 'codeiumdata.com',
+        suffix: 'zed.dev',
+        suffix: 'openrouter.ai',
+        suffix: 'groq.com',
+        suffix: 'groqcloud.com',
+        suffix: 'x.ai',
+        suffix: 'grok.com',
+        suffix: 'huggingface.co',
+        suffix: 'hf.co',
+        suffix: 'replicate.com',
+        suffix: 'stability.ai',
+        suffix: 'cohere.com',
+        suffix: 'perplexity.ai',
+        suffix: 'poe.com',
+        suffix: 'you.com',
+        suffix: 'mistral.ai',
+        suffix: 'together.ai',
+        suffix: 'fireworks.ai',
+        suffix: 'lepton.ai',
+        suffix: 'deepseek.com',
+        suffix: 'ciciai.com',
+        suffix: 'opera-api.com',
+
+        # ====================================================
+        # X、Twitter 和 Grok
+        # ====================================================
+        suffix: 'x.com',
+        suffix: 'twitter.com',
+        suffix: 'twimg.com',
+        suffix: 't.co',
+
+        # ====================================================
+        # 用户指定的网站
+        #
+        # shuaiapi.com 会匹配：
+        # shuaiapi.com
+        # api.shuaiapi.com
+        # 任意其他子域名.shuaiapi.com
+        # ====================================================
+        suffix: 'shuaiapi.com',
+        suffix: 'freebuff.com',
+        suffix: 'nvidia.com',
+        suffix: 'anyrouter.top',
+        suffix: 'opendns.com'
+    ) -> OpenAi
+
+    # 原 Clash 规则中的固定目标 IP
+    dip(
+        24.199.123.28/32,
+        64.23.132.171/32
+    ) -> OpenAi
+
+    # 中国大陆 IP 直连
+    #
+    # 放在专用域名规则之后，避免特殊域名解析到中国大陆 IP 时，
+    # 提前被 direct(must) 截获。
+    dip(geoip: cn) && !dport(53) -> direct(must)
+
+    # 中国大陆域名直连
+    domain(geosite: cn) -> direct
+
+    # 其他流量走默认代理组
+    fallback: Proxy
+}
+
+
+# ------------------------------------------------------------
+# 全局设置
+# ------------------------------------------------------------
+global {
+    # OpenWrt 默认 LAN 桥接接口通常是 br-lan
+    # 可以执行 ip -br addr 或 ip a 检查实际接口名称
+    lan_interface: br-lan
+
+    # 自动识别 WAN 接口
+    wan_interface: auto
+
+    # 保存面板账号、节点选择和运行数据
+    # 不使用 /var，避免 OpenWrt 重启后数据丢失
+    data_dir: '/etc/honk'
+
+    # 使用 uTLS 实现 TLS 指纹
+    tls_implementation: utls
+
+    # honk 启动阶段使用的 DNS 解析器
+    bootstrap_resolver: '119.29.29.29:53'
+}
+
+
+# ------------------------------------------------------------
+# 资源下载设置
+# ------------------------------------------------------------
+assets {
+    subscription {
+        # 使用 mihomo User-Agent 获取订阅
+        ua: 'clash.meta/1.19.30'
+
+        # 每 24 小时更新一次
+        interval: 86400s
+
+        # 保存订阅缓存
+        cache: true
+    }
+
+    geodata {
+        # MetaCubeX 完整版 GeoSite 和 GeoIP
+        geosite: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geosite.dat'
+        geoip: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geoip.dat'
+
+        # 通过 Proxy 组下载 GitHub Raw 资源
+        route: Proxy
+    }
+}
+
+
+# ------------------------------------------------------------
+# doona 管理面板
+#
+# 访问地址：
+# http://路由器IP:9090/ui/
+#
+# 首次打开时创建管理员账号。
+# 应通过 OpenWrt 防火墙禁止从 WAN 访问 TCP 9090。
+# ------------------------------------------------------------
+experimental {
+    native_api {
+        # 启用管理 API
+        enabled: true
+
+        # 监听所有网络接口
+        # 必须通过防火墙限制为仅允许 LAN 访问
+        listen: '0.0.0.0:9090'
+
+        # 启用密码认证
+        password_auth: true
+
+        # 允许面板修改并写入配置
+        config_write: true
+
+        # 使用内置管理界面
+        ui: embedded
+    }
+
+    cache_file {
+        # 启用缓存文件
+        enabled: true
+
+        # 持久保存 DNS 缓存
+        store_dns: true
+    }
+}
